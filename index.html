@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReggiRi | Портфолио</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0c10;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid #2a2e36;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+
+        .subtitle {
+            color: #8a8f99;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: #111418;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2e36;
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #d4af37;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: #1e2329;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            color: #a0a6b0;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #1e2329;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: #b0b7c2;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #111418;
+            max-width: 600px;
+            width: 90%;
+            border-radius: 16px;
+            border: 1px solid #d4af37;
+            padding: 2rem;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #8a8f99;
+            background: none;
+            border: none;
+        }
+
+        .modal-close:hover {
+            color: #d4af37;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            padding-right: 2rem;
+        }
+
+        .modal-body {
+            color: #b0b0c0;
+        }
+
+        .modal-body h4 {
+            color: #d4af37;
+            margin: 1rem 0 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            color: #5f6a7a;
+            font-size: 0.85rem;
+            border-top: 1px solid #2a2e36;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏗️ ReggiRi</h1>
+            <div class="subtitle">Сценарист </div>
+        </header>
+
+        <div class="grid">
+            
+            <div class="card" data-title="[Название проекта 1]" 
+                 data-full='{"desc":"[Здесь будет полное описание проекта. ]","details":["Детали"],"tech":["Навыки"]}'>
+                <img class="card-img" src="images/project1.jpg" alt="[Название проекта 1]" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
+                <div class="card-content">
+                    <div class="card-title">[Название проекта 1]</div>
+                    <div class="card-desc">[Краткое описание.]</div>
+                    <div class="card-tags">
+                        <span class="tag">[Тег]</span>
+                        <span class="tag">[Тег</span>
+                    </div>
+                </div>
+            </div>
+
+  
+            <div class="card" data-title="[Название проекта 2]" 
+                 data-full='{"desc":"[описание проекта.]","details":["Детали],"tech":["Навыки"]}'>
+                <img class="card-img" src="images/project2.jpg" alt="[Название проекта 2]" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
+                <div class="card-content">
+                    <div class="card-title">[Название проекта 2]</div>
+                    <div class="card-desc">[Краткое описание]</div>
+                    <div class="card-tags">
+                        <span class="tag">[Тег]</span>
+                        <span class="tag">[Тег]</span>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="card" data-title="[Название проекта 3]" 
+                 data-full='{"desc":"[Полное описание проекта.]","details":["Детали"],"tech":["Навыки"]}'>
+                <img class="card-img" src="images/project3.jpg" alt="[Название проекта 3]" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
+                <div class="card-content">
+                    <div class="card-title">[Название проекта 3]</div>
+                    <div class="card-desc">[Краткое описание.]</div>
+                    <div class="card-tags">
+                        <span class="tag">[Тег, ]</span>
+                        <span class="tag">[Тег, ]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 ReggiRi | <a href="https://github.com/reggiri" style="color: #8a8f99;">GitHub</a> | <a href="https://t.me/reggiri_build" style="color: #8a8f99;">Telegram</a>
+        </footer>
+    </div>
+
+  
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-title" id="modal-title"></div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.querySelector('.modal-close');
+
+        function openModal(title, data) {
+            modalTitle.textContent = title;
+            let html = `<p>${data.desc || ''}</p>`;
+            if (data.details && data.details.length) {
+                html += `<h4>📌 Ключевые моменты</h4><ul>`;
+                data.details.forEach(d => html += `<li>${d}</li>`);
+                html += `</ul>`;
+            }
+            if (data.tech && data.tech.length) {
+                html += `<h4>🛠️ Технологии / Навыки</h4><div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">`;
+                data.tech.forEach(t => html += `<span style="background:#1e2329; padding:0.2rem 0.6rem; border-radius:20px;">${t}</span>`);
+                html += `</div>`;
+            }
+            modalBody.innerHTML = html;
+            modal.classList.add('active');
+        }
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title');
+                const fullStr = card.getAttribute('data-full');
+                if (fullStr) {
+                    try {
+                        const full = JSON.parse(fullStr);
+                        openModal(title, full);
+                    } catch(e) {
+                        console.error('Ошибка парсинга данных', e);
+                    }
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
