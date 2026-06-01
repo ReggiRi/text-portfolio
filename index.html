@@ -11,11 +11,40 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #0a0c10;
+            --card-bg: #111418;
+            --border: #2a2e36;
+            --text: #e0e0e0;
+            --text-secondary: #a0a6b0;
+            --text-muted: #8a8f99;
+            --accent: #d4af37;
+            --tag-bg: #1e2329;
+            --tag-text: #b0b7c2;
+            --modal-overlay: rgba(0, 0, 0, 0.95);
+            --footer-text: #5f6a7a;
+        }
+
+        body.light {
+            --bg: #f5f5f5;
+            --card-bg: #ffffff;
+            --border: #dddddd;
+            --text: #222222;
+            --text-secondary: #555555;
+            --text-muted: #777777;
+            --accent: #b8860b;
+            --tag-bg: #eeeeee;
+            --tag-text: #444444;
+            --modal-overlay: rgba(255, 255, 255, 0.95);
+            --footer-text: #999999;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0c10;
-            color: #e0e0e0;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
         }
 
         .container {
@@ -27,17 +56,37 @@
         header {
             text-align: center;
             padding: 3rem 0 2rem;
-            border-bottom: 1px solid #2a2e36;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #d4af37;
+            color: var(--accent);
         }
 
         .subtitle {
-            color: #8a8f99;
+            color: var(--text-muted);
             font-size: 1.1rem;
         }
 
@@ -49,17 +98,24 @@
         }
 
         .card {
-            background: #111418;
+            background: var(--card-bg);
             border-radius: 16px;
             overflow: hidden;
-            border: 1px solid #2a2e36;
-            transition: transform 0.2s, border-color 0.2s;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s, opacity 0.6s, translate 0.6s;
             cursor: pointer;
+            opacity: 0;
+            translate: 0 20px;
+        }
+
+        .card.visible {
+            opacity: 1;
+            translate: 0 0;
         }
 
         .card:hover {
             transform: translateY(-4px);
-            border-color: #d4af37;
+            border-color: var(--accent);
         }
 
         .card-img {
@@ -67,7 +123,7 @@
             height: 200px;
             object-fit: cover;
             display: block;
-            background: #1e2329;
+            background: var(--tag-bg);
         }
 
         .card-content {
@@ -76,12 +132,12 @@
 
         .card-title {
             font-size: 1.4rem;
-            color: #d4af37;
+            color: var(--accent);
             margin-bottom: 0.5rem;
         }
 
         .card-desc {
-            color: #a0a6b0;
+            color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
@@ -93,11 +149,11 @@
         }
 
         .tag {
-            background: #1e2329;
+            background: var(--tag-bg);
             padding: 0.2rem 0.6rem;
             border-radius: 20px;
             font-size: 0.7rem;
-            color: #b0b7c2;
+            color: var(--tag-text);
         }
 
         .modal {
@@ -107,7 +163,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: var(--modal-overlay);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -118,11 +174,11 @@
         }
 
         .modal-content {
-            background: #111418;
+            background: var(--card-bg);
             max-width: 600px;
             width: 90%;
             border-radius: 16px;
-            border: 1px solid #d4af37;
+            border: 1px solid var(--accent);
             padding: 2rem;
             position: relative;
             max-height: 80vh;
@@ -135,38 +191,84 @@
             right: 1rem;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #8a8f99;
+            color: var(--text-muted);
             background: none;
             border: none;
         }
 
         .modal-close:hover {
-            color: #d4af37;
+            color: var(--accent);
         }
 
         .modal-title {
             font-size: 1.8rem;
-            color: #d4af37;
+            color: var(--accent);
             margin-bottom: 1rem;
             padding-right: 2rem;
         }
 
         .modal-body {
-            color: #b0b0c0;
+            color: var(--text-secondary);
         }
 
         .modal-body h4 {
-            color: #d4af37;
+            color: var(--accent);
             margin: 1rem 0 0.5rem;
+        }
+
+        .modal-body a {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 0.3rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .modal-body a:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .modal-body a::after {
+            content: ' ↗';
+            font-size: 0.8em;
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .modal-tag {
+            background: var(--tag-bg);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--tag-text);
         }
 
         footer {
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
-            color: #5f6a7a;
+            color: var(--footer-text);
             font-size: 0.85rem;
-            border-top: 1px solid #2a2e36;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent);
         }
 
         @media (max-width: 768px) {
@@ -176,34 +278,37 @@
             .grid {
                 grid-template-columns: 1fr;
             }
+            .theme-toggle {
+                position: static;
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <button class="theme-toggle" id="themeToggle">🌙 Тёмная тема</button>
             <h1>ReggiRi</h1>
-            <div class="subtitle">Сценарист и редактор </div>
+            <div class="subtitle">Сценарист и редактор</div>
         </header>
 
-        <div class="grid">
-            
+        <div class="grid" id="cardGrid">
             <div class="card" data-title="Kuraga" 
-                 data-full='{"desc":"Создавал проработанный мир, но заказчик в один момент поставил невыполнимые дедлайны. Всё осталось в одной открытой вики:","details":["reggiri.github.io/kuraga-pedia"],"tech":["Ворлдбилдинг; Коммуникация;"]}'>
+                 data-full='{"desc":"Создавал проработанный мир, но заказчик в один момент поставил невыполнимые дедлайны. Всё осталось в одной открытой вики:","details":["https://reggiri.github.io/kuraga-pedia"],"tech":["Ворлдбилдинг","Коммуникация"]}'>
                 <img class="card-img" src="images/kuraga.png" alt="Kuraga" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
                 <div class="card-content">
                     <div class="card-title">Kuraga</div>
                     <div class="card-desc">Проработанный мир</div>
                     <div class="card-tags">
-                        <span class="tag">Ворлбилдинг</span>
+                        <span class="tag">Ворлдбилдинг</span>
                     </div>
                 </div>
             </div>
 
-  
             <div class="card" data-title="Fresh Meat" 
-                 data-full='{"desc":"Работа на студию Fresh Meat в качестве сценариста. Мною было отредактировано более трёхсот квестов сборки Kingdom of Might and Magic.]","details":"https://t.me/fshmeat","tech":"FTB Quests; Редактирование"}'>
-                <img class="card-img" src="images/fm.jpg" alt="[Название проекта 2]" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
+                 data-full='{"desc":"Работа на студию Fresh Meat в качестве сценариста. Мною было отредактировано более трёхсот квестов сборки Kingdom of Might and Magic.","details":["https://t.me/fshmeat"],"tech":["FTB Quests","Редактирование"]}'>
+                <img class="card-img" src="images/fm.jpg" alt="Fresh Meat" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
                 <div class="card-content">
                     <div class="card-title">Fresh Meat</div>
                     <div class="card-desc">Работа на студию Fresh Meat</div>
@@ -214,27 +319,25 @@
                 </div>
             </div>
 
-           
             <div class="card" data-title="Рэйнард" 
-     data-full='{"desc":"Пишу сценарии для канала \"Я - Рэйнард\". Сдавал сценарии всегда в срок.","details":["https://youtube.com/@reynardik?si=laCVzmcY8_Uokbsl"],"tech":["Работа на ютубера","Дэдлайны"]}'>
-    <img class="card-img" src="images/rein2.jpg" alt="Рэйнард" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
-    <div class="card-content">
-        <div class="card-title">Рэйнард</div>
-        <div class="card-desc">Сценарии для роликов Рэйнарда.</div>
-        <div class="card-tags">
-            <span class="tag">Сценарии</span>
-            <span class="tag">Работа с ютубером</span>
-        </div>
-    </div>
+                 data-full='{"desc":"Пишу сценарии для канала \"Я - Рэйнард\". Сдавал сценарии всегда в срок.","details":["https://youtube.com/@reynardik?si=laCVzmcY8_Uokbsl"],"tech":["Работа на ютубера","Дэдлайны"]}'>
+                <img class="card-img" src="images/rein2.jpg" alt="Рэйнард" onerror="this.src='https://placehold.co/600x400/1e2329/8a8f99?text=ReggiRi'">
+                <div class="card-content">
+                    <div class="card-title">Рэйнард</div>
+                    <div class="card-desc">Сценарии для роликов Рэйнарда</div>
+                    <div class="card-tags">
+                        <span class="tag">Сценарии</span>
+                        <span class="tag">Работа с ютубером</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <footer>
-            © 2026 ReggiRi | <a href="https://github.com/reggiri" style="color: #8a8f99;">GitHub</a> | <a href="https://t.me/Regg1Ri" style="color: #8a8f99;">Telegram</a>
+            © 2026 ReggiRi | <a href="https://github.com/reggiri">GitHub</a> | <a href="https://t.me/Regg1Ri">Telegram</a>
         </footer>
     </div>
 
-  
     <div class="modal" id="modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -244,52 +347,114 @@
     </div>
 
     <script>
-        const modal = document.getElementById('modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        const closeBtn = document.querySelector('.modal-close');
+        (function() {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.querySelector('.modal-close');
+            const themeToggle = document.getElementById('themeToggle');
 
-        function openModal(title, data) {
-            modalTitle.textContent = title;
-            let html = `<p>${data.desc || ''}</p>`;
-            if (data.details && data.details.length) {
-                html += `<h4>📌 Ключевые моменты</h4><ul>`;
-                data.details.forEach(d => html += `<li>${d}</li>`);
-                html += `</ul>`;
+            function isURL(text) {
+                return /^https?:\/\//i.test(text);
             }
-            if (data.tech && data.tech.length) {
-                html += `<h4>🛠️ Технологии / Навыки</h4><div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">`;
-                data.tech.forEach(t => html += `<span style="background:#1e2329; padding:0.2rem 0.6rem; border-radius:20px;">${t}</span>`);
-                html += `</div>`;
-            }
-            modalBody.innerHTML = html;
-            modal.classList.add('active');
-        }
 
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title');
-                const fullStr = card.getAttribute('data-full');
-                if (fullStr) {
-                    try {
-                        const full = JSON.parse(fullStr);
-                        openModal(title, full);
-                    } catch(e) {
-                        console.error('Ошибка парсинга данных', e);
+            function openModal(title, data) {
+                modalTitle.textContent = title;
+                let html = '<p>' + (data.desc || '') + '</p>';
+                
+                if (data.details && data.details.length) {
+                    html += '<h4>📌 Ключевые моменты</h4><ul>';
+                    data.details.forEach(function(d) {
+                        if (isURL(d)) {
+                            html += '<li><a href="' + d + '" target="_blank" rel="noopener">' + d + '</a></li>';
+                        } else {
+                            html += '<li>' + d + '</li>';
+                        }
+                    });
+                    html += '</ul>';
+                }
+                
+                if (data.tech && data.tech.length) {
+                    html += '<h4>🛠️ Технологии / Навыки</h4><div class="modal-tags">';
+                    data.tech.forEach(function(t) {
+                        html += '<span class="modal-tag">' + t + '</span>';
+                    });
+                    html += '</div>';
+                }
+                
+                modalBody.innerHTML = html;
+                modal.classList.add('active');
+            }
+
+            document.querySelectorAll('.card').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    var title = card.getAttribute('data-title');
+                    var fullStr = card.getAttribute('data-full');
+                    if (fullStr) {
+                        try {
+                            var full = JSON.parse(fullStr);
+                            openModal(title, full);
+                        } catch(e) {
+                            console.error('Ошибка парсинга данных', e);
+                        }
                     }
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
                 }
             });
-        });
 
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                }
+            });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            document.querySelectorAll('.card').forEach(function(card) {
+                observer.observe(card);
+            });
+
+            function setTheme(isLight) {
+                if (isLight) {
+                    document.body.classList.add('light');
+                    themeToggle.textContent = '🌞 Светлая тема';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.body.classList.remove('light');
+                    themeToggle.textContent = '🌙 Тёмная тема';
+                    localStorage.setItem('theme', 'dark');
+                }
             }
-        });
+
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                setTheme(true);
+            }
+
+            themeToggle.addEventListener('click', function() {
+                var isLight = document.body.classList.contains('light');
+                setTheme(!isLight);
+            });
+        })();
     </script>
 </body>
 </html>
