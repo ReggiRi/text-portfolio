@@ -1,0 +1,2443 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b090b">
+<meta name="description" content="ReggiRi — сценарист, narrative designer и worldbuilder.">
+<title>ReggiRi — сценарист / narrative designer</title>
+<style>
+:root{--red:#5a1016;--red2:#7a1b22;--red3:#2a0b0f;--gold:#d8c58c;--gold2:#f0e5bd;--white:#f8f7f2;--paper:#eee9d9;--khaki:#777a5b;--ink:#191715;--muted:#c8c0aa;--line:rgba(216,197,140,.24);--shadow:0 18px 55px rgba(0,0,0,.35)}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 80% 0%,#421016 0,#1b090b 38%,#100708 100%);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58} body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(to bottom,black,transparent 80%)} a{color:inherit} button,input{font:inherit} button{color:inherit} .container{width:min(1180px,calc(100% - 40px));margin:auto} .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px max(20px,calc((100vw - 1180px)/2));background:rgba(16,7,8,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)} .brand{font-weight:900;letter-spacing:.05em;text-decoration:none} .brand b{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:8px;border:1px solid var(--gold);color:var(--gold);border-radius:50%} nav{display:flex;gap:22px;font-size:.9rem;color:var(--gold2)} nav a{text-decoration:none;opacity:.86} nav a:hover{opacity:1;color:#fff} .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:42px;padding:88px 0 70px;align-items:end} .eyebrow,.card-kicker{font-size:.75rem;letter-spacing:.18em;color:var(--gold);font-weight:800} h1,h2,h3,h4{line-height:1.08;margin:0} h1{font-size:clamp(3rem,7vw,6.8rem);letter-spacing:-.055em;margin:16px 0 24px} h1 em,h2 em{color:var(--gold);font-style:normal} .lead{max-width:760px;font-size:1.18rem;color:#ddd6c3} .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px} .btn,.card-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold);background:var(--gold);color:#261b0e;padding:12px 17px;border-radius:9px;font-weight:800;text-decoration:none;cursor:pointer} .btn.ghost{background:transparent;color:var(--gold2)} .hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(90,16,22,.9),rgba(42,11,15,.85));padding:28px;border-radius:18px;box-shadow:var(--shadow)} .hero-card-title{font-size:2rem;font-weight:700;margin:30px 0} .hero-card-title strong{color:var(--gold)} .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} .mini-grid div{padding:15px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.035)} .mini-grid b{display:block;color:var(--gold);font-size:1.5rem} .mini-grid span{font-size:.8rem;color:var(--muted)} .section{padding:48px 0 90px} .section-head{display:flex;justify-content:space-between;gap:25px;align-items:end;margin-bottom:25px} .section-head h2{font-size:clamp(2rem,4vw,3.6rem);margin-top:8px} .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end} .search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:8px 11px;border-radius:9px;min-width:240px} .search input{background:transparent;border:0;outline:0;color:white;width:100%} .filter{border:1px solid var(--line);background:transparent;padding:9px 11px;border-radius:8px;color:var(--gold2);cursor:pointer} .filter.active{background:var(--gold);color:#25190c;border-color:var(--gold)} .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px} .project-card{min-width:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.02));box-shadow:0 12px 34px rgba(0,0,0,.18)} .card-art{min-height:190px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,var(--red2),var(--red3));position:relative;overflow:hidden} .card-art::after{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(216,197,140,.35);border-radius:50%;right:-60px;bottom:-70px;box-shadow:0 0 0 30px rgba(216,197,140,.04),0 0 0 60px rgba(216,197,140,.025)} .art-kuraga{background:linear-gradient(135deg,#6d6243,#262717)} .art-fresh{background:linear-gradient(135deg,#5a1016,#4e4d38)} .art-skyloom{background:linear-gradient(135deg,#3b161b,#777a5b)} .art-video{background:linear-gradient(135deg,#7a1b22,#342b21)} .art-intro{background:linear-gradient(135deg,#5a1016,#777a5b)} .art-mlt{background:linear-gradient(135deg,#2a0b0f,#6d6243)} .card-art h3{position:relative;z-index:1;font-size:clamp(1.8rem,3vw,2.7rem);max-width:90%;letter-spacing:-.035em} .card-body{padding:24px 26px 27px} .meta{font-size:.82rem;color:var(--gold);margin-bottom:12px} .card-body p{font-size:1.06rem;color:#e7e1d1;margin:0 0 18px} .card-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:21px} .card-tags span{font-size:.78rem;padding:5px 8px;border-radius:999px;background:rgba(216,197,140,.1);border:1px solid var(--line);color:var(--gold2)} .card-link{background:transparent;color:var(--gold);padding:9px 0;border:0} .archive-section{background:#171514;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:75px 0} .archive-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:20px} .archive-list{display:grid;gap:8px} .archive-item{text-align:left;background:rgba(255,255,255,.03);border:1px solid var(--line);padding:15px;border-radius:10px;cursor:pointer} .archive-item b{display:block;color:var(--gold2);margin-bottom:4px} .archive-item span{font-size:.86rem;color:#bdb6a4} .contact{padding:85px 0;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center} .contact h2{font-size:clamp(2.3rem,5vw,4.4rem)} .contact p{font-size:1.1rem;color:#d4cebf} .contact-list{display:grid;gap:10px;margin-top:22px} .contact-list a,.contact-list span{display:flex;justify-content:space-between;gap:15px;padding:13px 15px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:rgba(255,255,255,.03)} .contact-list small{color:var(--muted)} footer{border-top:1px solid var(--line);padding:22px 0 30px;color:#bdb6a4;font-size:.84rem;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap} .license-link{color:var(--gold);text-decoration:underline;text-underline-offset:3px;cursor:pointer;background:none;border:0;padding:0} .modal{display:none;position:fixed;inset:0;z-index:50} .modal.open{display:block} .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(7px)} .modal-window{position:relative;z-index:1;width:min(1100px,calc(100% - 28px));height:min(92vh,900px);margin:4vh auto 0;background:#f3f0e6;color:var(--ink);border-radius:16px;overflow:hidden;box-shadow:0 30px 90px #000;display:flex;flex-direction:column} .modal-head{display:flex;justify-content:space-between;gap:20px;padding:20px 24px;background:var(--red3);color:white;border-bottom:1px solid var(--gold)} .modal-head h2{font-size:clamp(1.6rem,4vw,2.8rem);margin-top:6px} .close{border:1px solid var(--line);background:transparent;color:var(--gold);width:42px;height:42px;border-radius:50%;font-size:1.6rem;cursor:pointer;flex:0 0 auto} .modal-meta{padding:11px 24px;display:flex;gap:7px;flex-wrap:wrap;background:#29221c;color:#eadfca;font-size:.78rem} .modal-tabs{display:flex;overflow:auto;background:#e1dac9;border-bottom:1px solid #c7bda8;flex:0 0 auto} .modal-tab{white-space:nowrap;border:0;border-right:1px solid #c7bda8;background:transparent;padding:12px 15px;color:#4e4438;cursor:pointer;font-weight:700} .modal-tab.active{background:#fffaf0;color:var(--red)} .modal-content{overflow:auto;padding:28px;min-height:0;font-size:1.02rem} .detail-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:30px} .detail-copy h3,.wiki h2,.wiki h3,.wiki h4{color:var(--red);margin:24px 0 9px} .detail-copy h3:first-child,.wiki h2:first-child{margin-top:0} .detail-copy ul,.detail-copy ol{padding-left:1.25rem} .quote{border-left:4px solid var(--gold);background:#e9e2d2;padding:18px 20px;font-weight:700;color:#493d31;border-radius:0 10px 10px 0} .links{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px} .links a{padding:9px 12px;border-radius:8px;background:var(--red);color:white;text-decoration:none} .doc-view{background:#fffdf7;border:1px solid #d8cfbd;border-radius:10px;overflow:hidden} .document-text{margin:0;padding:24px;white-space:pre-wrap;word-break:break-word;font:500 1rem/1.68 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#302b25;max-height:none} .viewer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px} .viewer-actions button{border:1px solid #b6aa92;background:#eee7d6;padding:8px 11px;border-radius:8px;cursor:pointer} .wiki{max-width:920px;margin:auto;font-family:Georgia,"Times New Roman",serif;font-size:1.02rem;line-height:1.68;color:#2c2b28} .wiki h2{font-size:2rem;border-bottom:2px solid #b89a7a;padding-bottom:5px} .wiki h3{font-size:1.45rem;border-bottom:1px solid #ddd2c0;padding-bottom:4px} .wiki h4{font-size:1.16rem} .wiki p,.wiki li{margin-bottom:.8rem} .wiki ol{padding-left:1.6rem} .wiki-note{background:#e9e2d4;border-left:6px solid #b89a7a;padding:13px 16px;margin-bottom:22px;border-radius:9px;color:#4a3b2c} .wiki-stats{margin-top:30px;padding-top:14px;border-top:2px dashed #cbbca4;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#6c604e;font-size:.85rem} .license{max-width:800px;margin:auto} .license h3{color:var(--red);font-size:1.5rem;margin:0 0 12px} .license p{margin:.7rem 0} .license ul{padding-left:1.25rem} .empty{padding:25px;text-align:center;color:var(--muted)}
+@media(max-width:800px){.container{width:min(100% - 24px,1180px)} nav{display:none} .topbar{padding:12px} .hero{grid-template-columns:1fr;padding:55px 0 42px;gap:25px} h1{font-size:clamp(2.8rem,14vw,5rem)} .hero-card{padding:20px} .project-grid{grid-template-columns:1fr} .section-head{display:block} .controls{justify-content:flex-start;margin-top:18px} .search{width:100%} .archive-grid,.contact,.detail-grid{grid-template-columns:1fr} .contact{padding:60px 0} .modal-window{width:100%;height:100%;margin:0;border-radius:0} .modal-head{padding:16px} .modal-content{padding:18px 14px;font-size:1rem} .document-text{padding:16px;font-size:.9rem;line-height:1.6} .wiki{font-size:1rem} footer{display:block;padding-bottom:24px} footer span{display:block;margin-top:6px}}
+@media(max-width:480px){.mini-grid{grid-template-columns:1fr 1fr} .card-art{min-height:165px;padding:20px} .card-body{padding:20px} .card-body p{font-size:1rem} .card-art h3{font-size:1.9rem} .section{padding:35px 0 60px} .modal-meta{padding:9px 14px}}
+</style>
+</head>
+<body id="top">
+<header class="topbar"><a class="brand" href="#top"><b>R</b> ReggiRi</a><nav><a href="#work">Работы</a><a href="#archive">Архив</a><a href="#contact">Контакты</a></nav></header>
+<main>
+<section class="hero container"><div><div class="eyebrow">СЦЕНАРИЙ · НАРРАТИВНЫЙ ДИЗАЙН · МИРОСТРОЕНИЕ</div><h1>Истории, которые <em>работают. </em></h1><p class="lead">Сценарии, игровой нарратив, миры, персонажи и production-документы. Собранный за несколько лет рабочий архив и отдельные публичные кейсы.</p><div class="hero-actions"><a class="btn" href="#work">Смотреть проекты ↓</a><a class="btn ghost" href="#contact">Контакты</a></div></div><aside class="hero-card"><div class="eyebrow">PROFILE / REGGIRI</div><div class="hero-card-title">Сценарист<br><strong>+ narrative designer</strong></div><div class="mini-grid"><div><b>8</b><span>Отдельных примеров работы</span></div><div><b>6</b><span>Документов в Архиве</span></div><div><b>4+</b><span>Формата работы</span></div><div><b>∞</b><span>Идей</span></div></div></aside></section>
+<section id="work" class="section container"><div class="section-head"><div><div class="eyebrow">ВЫБРАННЫЕ ПРОЕКТЫ</div><h2>Проекты</h2></div><div class="controls"><label class="search">⌕ <input id="search" type="search" placeholder="Найти проект или тег…"></label><button class="filter active" data-filter="all">Все</button><button class="filter" data-filter="game">Игры</button><button class="filter" data-filter="world">Мир / лор</button><button class="filter" data-filter="video">Видео</button></div></div><div class="project-grid"><article class="project-card" data-kind="video" data-search="Ремейк сюжетного сезона «Новое Поколение» SKYLOOM / TEAM PROJECT Ремейк сюжетного сезона «Новое Поколение» в команде SkyLoom. сюжет команда Minecraft">
+      <div class="card-art art-skyloom"><span class="card-kicker">SKYLOOM / TEAM PROJECT</span><h3>Ремейк сюжетного сезона «Новое Поколение»</h3></div>
+      <div class="card-body"><div class="meta"><span>командная работа</span></div><p>Ремейк сюжетного сезона «Новое Поколение» в команде SkyLoom.</p><div class="card-tags"><span>сюжет</span><span>команда</span><span>Minecraft</span></div><button class="card-link" data-open="skyloom">Открыть проект <span>→</span></button></div>
+    </article><article class="project-card" data-kind="world" data-search="Kuraga WORLDBUILDING Самостоятельный кейс миростроения: проработанный мир, вынесенный в отдельную открытую вики Kuraga Pedia. worldbuilding world bible вики">
+      <div class="card-art art-kuraga"><span class="card-kicker">WORLDBUILDING</span><h3>Kuraga</h3></div>
+      <div class="card-body"><div class="meta"><span>открытая библия мира</span></div><p>Самостоятельный кейс миростроения: проработанный мир, вынесенный в отдельную открытую вики Kuraga Pedia.</p><div class="card-tags"><span>worldbuilding</span><span>world bible</span><span>вики</span></div><button class="card-link" data-open="kuraga">Открыть проект <span>→</span></button></div>
+    </article><article class="project-card" data-kind="game" data-search="Fresh Meat QUEST EDITING Работа на студию Fresh Meat в качестве сценариста: редактирование более трёхсот квестов сборки Kingdom of Might and Magic. FTB Quests редактирование студия">
+      <div class="card-art art-fresh"><span class="card-kicker">QUEST EDITING</span><h3>Fresh Meat</h3></div>
+      <div class="card-body"><div class="meta"><span>студийная работа</span></div><p>Работа на студию Fresh Meat в качестве сценариста: редактирование более трёхсот квестов сборки Kingdom of Might and Magic.</p><div class="card-tags"><span>FTB Quests</span><span>редактирование</span><span>студия</span></div><button class="card-link" data-open="fresh">Открыть проект <span>→</span></button></div>
+    </article><article class="project-card" data-kind="video" data-search="Рэйнард YOUTUBE / Кейс сценарной работы для канала «Я — Рэйнард». Внутри — «Повторяшки» как аналитический текст о тропах и «Эден» как отдельный сценарный материал. YouTube сценарии аналитика">
+      <div class="card-art art-video"><span class="card-kicker">YOUTUBE </span><h3>Рэйнард</h3></div>
+      <div class="card-body"><div class="meta"><span>сценарии + аналитика</span></div><p>Кейс сценарной работы для канала «Я — Рэйнард». Внутри — «Повторяшки» как аналитический текст о тропах и «Эден» как отдельный сценарный материал.</p><div class="card-tags"><span>YouTube</span><span>сценарии</span><span>аналитика</span></div><button class="card-link" data-open="reynard">Открыть проект <span>→</span></button></div>
+    </article><article class="project-card" data-kind="game" data-search="Вступительное No Echo GAME INTRO Объединённая карточка двух вступительных материалов: сценария «Дорога» для NoEcho и тестового плана первой главы. катсцены структура персонажи диалоги">
+      <div class="card-art art-intro"><span class="card-kicker">GAME INTRO</span><h3>Вступительное No Echo</h3></div>
+      <div class="card-body"><div class="meta"><span>«Дорога» + первая глава</span></div><p>Объединённая карточка двух вступительных материалов: сценария «Дорога» для NoEcho и тестового плана первой главы.</p><div class="card-tags"><span>катсцены</span><span>структура</span><span>персонажи</span><span>диалоги</span></div><button class="card-link" data-open="intro">Открыть проект <span>→</span></button></div>
+    </article><article class="project-card" data-kind="game" data-search="Монумент ложного Творца INTERACTIVE SERIES Интерактивный сценарий с исследованием, боем, предметами, диалогами, выбором маршрута и переходом в сон-сцену. интерактив геймплей квесты">
+      <div class="card-art art-mlt"><span class="card-kicker">INTERACTIVE SERIES</span><h3>Монумент ложного Творца</h3></div>
+      <div class="card-body"><div class="meta"><span>серия 1</span></div><p>Интерактивный сценарий с исследованием, боем, предметами, диалогами, выбором маршрута и переходом в сон-сцену.</p><div class="card-tags"><span>интерактив</span><span>геймплей</span><span>квесты</span></div><button class="card-link" data-open="mlt">Открыть проект <span>→</span></button></div>
+    </article></div><div id="empty" class="empty" hidden>Ничего не найдено.</div></section>
+<section id="archive" class="archive-section"><div class="container"><div class="section-head"><div><div class="eyebrow">DOCUMENT ARCHIVE</div><h2>Архив / Меровия</h2></div><p>Шесть связанных материалов: от устройства мира до конкретных игровых сцен.</p></div><div class="archive-grid"><div class="archive-list"><button class="archive-item" data-doc="Сцена пробуждение redraw.pdf"><b>01 · Пробуждение игрока</b><span>Стартовая сцена и ввод игрока в мир.</span></button><button class="archive-item" data-doc="Акт Первый.pdf"><b>02 · Акт первый</b><span>Хаб, комнаты, ресурсы и лут.</span></button><button class="archive-item" data-doc="Лор Меровии Redraw.pdf"><b>03 · Лор Меровии</b><span>История мира и устройство Архива.</span></button><button class="archive-item" data-doc="Записки(сто штук).pdf"><b>04 · Записки — 100 штук</b><span>Внутримировая история от первого лица.</span></button><button class="archive-item" data-doc="Цитаты и Парадоксы.pdf"><b>05 · Цитаты и Парадоксы</b><span>Предметы, эффекты и текстовые механики.</span></button><button class="archive-item" data-doc="Акт 2 v1.1.pdf"><b>06 · Акт 2 — Фракции</b><span>Фракции, печати и боссы.</span></button></div><div class="quote">Меровия, Мнемополис, Архив, война, очистка, коконы, мутации и Великий архивариус образуют единый игровой кейс. Воспоминания становятся лором и ресурсом, фракции — разными отношениями к Архиву, а боссы поддерживают темы памяти, знания и идентичности.</div></div></div></section>
+<section id="contact" class="contact container"><div><div class="eyebrow">CONTACT</div><h2>Есть задача — <em>разберём.</em></h2></div><div><p>Сценарий игры, квест, персонаж, лор-библия, редактура или разбор уже существующей истории.</p><div class="contact-list"><a href="https://t.me/Regg1Ri" target="_blank" rel="noopener"><span>Telegram</span><small>@Regg1Ri ↗</small></a><span><span>Discord</span><small>reggiri</small></span><a href="mailto:tk1276733@gmail.com"><span>Gmail</span><small>tk1276733@gmail.com</small></a></div><p><small>Если Telegram или Discord неактивны, пишите на Gmail.</small></p></div></section>
+</main>
+<footer class="container"><span>©ReggiRi 2025–2026</span><span>scenario / narrative / worldbuilding · <button class="license-link" id="licenseBtn">Лицензия</button></span></footer>
+<div class="modal" id="modal" aria-hidden="true"><div class="backdrop" data-close></div><section class="modal-window" role="dialog" aria-modal="true"><div class="modal-head"><div><div class="eyebrow" id="modalEyebrow">PROJECT</div><h2 id="modalTitle">Проект</h2></div><button class="close" data-close aria-label="Закрыть">×</button></div><div class="modal-meta" id="modalMeta"></div><div class="modal-tabs" id="modalTabs"></div><div class="modal-content" id="modalContent"></div></section></div>
+<template id="doc-Тестовое_задание_на_сюжет_первой_главы.pdf"><h3>Тестовое_задание_на_сюжет_первой_главы.pdf</h3><pre class="document-text">Тестовое задание на сюжет первой главы
+
+Предисловие​
+1. Это действительно лишь набросок, который не претендует на истинное видение
+создателя. Ознакомившись со всеми внутренними документами и концептами
+предыдущего главного сценариста, я мог бы составить план, который соответствует
+видению создателя, но сейчас я не хочу играть в угадайку.
+2. Мною был введён новый ключевой персонаж Надд, который упоминался в тестовом
+задании. Он стал полноценным персонажем с линией, страхами и мотивацией. Также,
+мной были использованы Крис с Ноланом, которые в изначальном документе являлись
+скорее фоном. Они стали руками Надда, но в таком весьма общем плане их роль
+менее значительна, и может сложиться мнение, что это клишированная парочка типа
+Грэбба и Гойла из Гарри Поттера.
+
+
+
+Событие 1. Сон и первое наблюдение
+Что происходит: Джону снится девушка. Она говорит: «Лололошка, ты нужен мне. Ты
+должен найти меня. Твой свет погаснет». Он просыпается. Утро. Саша стучит в дверь,
+зовёт завтракать. Джон делает вид, что всё нормально, но мысли о сне не отпускают. В
+университете он рассеян. Это замечает Надд — тихий парень, который обычно
+держится в стороне вместе с Ноланом и Крисом.
+
+Почему это происходит: Сон явно необычен. Это контакт с кем-то из другого мира.
+Но Джон пока этого не знает. Он думает, что это стресс, проблемы в семье или что-то в
+этом роде. Надд же замечает его состояние, потому что сам интересуется аномалиями
+— его семья поколениями собирала записи о странных местах Фэрфилда.
+
+К чему это приводит дальше: Джон занимается своими привычными делами, не
+понимая, что с ним происходит. Он полностью отмахивается от сна. Но Надд, увидев
+его состояние, начинает подозревать, что Джон столкнулся с чем-то. Это даёт Надду
+мотив для дальнейшего сближения — он хочет выяснить, что именно видел или
+чувствовал Джон.
+
+
+
+Событие 2. Стычка с Ноланом и Крисом, первый контакт с Наддом
+Что происходит: В коридоре университета Нолан толкает Джона, Крис смеётся. Это
+уже привычная сцена — Джон не отвечает, он привык. Но после стычки к нему
+подходит Надд — тот самый парень из компании Нолана. Он ведёт себя дружелюбно.
+Спрашивает, всё ли в порядке, говорит, что заметил, что Джон сам не свой. Джон
+удивлён — он не ожидал поддержки от кого-то из этой компании. Он благодарит. Надд
+предлагает поговорить после пар.
+Почему это происходит: Надд хочет выяснить, что Джон знает. Он не говорит всей
+правды, он не друг. Он лишь использует дружелюбие как инструмент. Нолан и Крис —
+его руки. Они делают грязную работу, пока Надд остаётся в тени.
+
+
+                                                                                    1
+К чему это приводит дальше: Джон начинает доверять Надду. Это первый шаг к
+сближению, и, соответственно, к будущему предательству. Джон одинок, у него нет
+друзей, и он хватается за эту поддержку, не понимая, что за ней стоит.
+
+
+
+Событие 3. Прогулка и первая аномалия
+Что происходит: После пар Джон идёт домой. Возле старого дома он замечает
+странную человекоподобную фигуру. Она вытянута, двигается неестественно. Фигура
+поворачивается к нему. Джон замирает. Золотая вспышка. Он приходит в себя на том
+же месте, но уже прошло несколько минут, фигуры нет. Он в панике бежит домой.
+
+Почему это происходит: Вспышка Джона — его «Искра» — активируется
+неконтролируемо в момент страха. Важно: это не полное перемещение, а именно
+мерцание. Существо — маяк. Или приманка. Создано, чтобы искать мироходцев. Оно
+и провоцирует вспышку.
+
+К чему это приводит дальше: Джон получает первое неопровержимое
+доказательство того, что это не галлюцинация. Он видел что-то реальное. И оно
+исчезло после вспышки. Он не знает, что это было. Но он боится. И теперь он не может
+просто отмахнуться от своих снов.
+
+
+
+Событие 4. Разговор с Сашей и частичное раскрытие
+Что происходит: Джон приходит домой. Саша замечает, что он не в себе. Она
+пытается выяснить, что случилось. Джон сначала отмахивается. Но потом частично
+рассказывает: о странных снах, о том, что видел что-то возле старого дома. Он не
+говорит о вспышке и перемещении. Саша пугается, но не отворачивается. Она верит
+ему, и предлагает помочь.
+
+Почему это происходит: Саша видит, что брат напуган. Она не понимает, что
+происходит, но доверяет ему. Джон же понимает, что не может больше врать. Он не
+рассказывает всего, но даёт ей часть правды.
+
+К чему это приводит дальше: Саша становится союзником в этом деле. Но она также
+становится и целью. Если Джон опасен, то и она тоже. Джон понимает, что в поисках
+правды он в ответе не только за себя, но и за неё. Это делает его более уязвимым.
+
+
+Событие 5. Эксперимент в «месте силы»
+Что происходит: Надд снова подходит к Джону. Он говорит, что знает о «местах, где
+происходит странное». У него есть старые карты и записи. Он предлагает проверить
+одно из таких мест — старую водонапорную башню на окраине города. Джон
+колеблется, но соглашается. Они идут туда. Джон пытается осознанно активировать
+свою способность, концентрируясь на воспоминаниях о вспышке. Башня начинает
+вибрировать, воздух искажается, появляется прозрачный силуэт существа из сна.
+Затем всё резко прекращается. Надд в шоке — он никогда не видел ничего подобного.
+
+
+
+                                                                                   2
+Почему это происходит: Башня находится на пересечении «энергетических линий»
+мира, которые резонируют с «Искрой» Джона. Его попытка активировать способность
+осознанно вызывает резонанс, который привлекает внимание сущности, но не
+переносит его. Надд же, увидев это, убеждается, что аномалии реальны, и пугается.
+
+К чему это приводит дальше: Джон убеждается, что его способность — это
+отдельная система. Но после эксперимента его состояние ухудшается: слабость,
+головокружение. Дома у него происходит неконтролируемый выброс энергии. Саша
+видит это. Джон понимает, что его сила опасна для близких. Надд же, увидев силу
+Джона, начинает бояться его. И решает, что от Джона нужно избавиться*. ​
+​
+* Надд – не исследователь, но и не «искрорасист». Он проворачивает это, что бы
+убедиться в опасности, или наоборот безопасности Джона как части этой загадки с
+аномалиями.
+
+
+
+Событие 6. Ритуал и встреча с Хранительницей
+Что происходит: Надд в отчаянии находит в записях предка «ритуал связи», не до
+конца понимая его смысл, но с желанием вывести Ло из игры. Он говорит Джону, что
+это может помочь. Они проводят ритуал в заброшенной церкви. Джон впадает в транс.
+Он видит Хранительницу — сущность, которая говорит, что он «Свет» и что «Тень» уже
+нашла его. Она даёт ему «ключ» — знание или символ — и предупреждает, что он
+должен стать сильнее, прежде чем «Тень» вернётся. Джон приходит в себя. Он
+рассказывает Надду всё, что видел. Надд слушает — и ломается. Он понимает, что
+впустил в свою жизнь нечто опасное. И что Джон, по его мнению, — источник этого.*
+* Ну то есть лицемерно забывает о том, что сам и заварил эту кашу.
+
+Почему это происходит: Ритуал привлекает внимание Хранительницы. Она видит в
+Джоне потенциального союзника и хочет, чтобы он выжил. Надд же, услышав о «Тени»
+и «Свете», понимает, что это выходит за рамки его страхов, это реально и опасно.
+
+К чему это приводит дальше: Джон получает цель — стать сильнее и дать отпор
+«Тени». Он также получает врага — «Тень». Но главное: он теряет союзника. Надд
+больше не хочет помогать. Он хочет, чтобы Джон исчез.
+
+
+
+Событие 7. Метка и попытка изоляции
+Что происходит: Во время тренировки Джон совершает частичное перемещение.
+«Тень» оставляет на его руке метку. Джон понимает, что она найдёт его. Он в панике,
+хочет уйти, спрятаться, защитить Сашу. Но он не уходит, потому что понимает: Саша
+останется одна. Отец не выходит из комнаты, а Надд — ненадёжен.* Он не может её
+бросить. Он решает остаться. Но меняет поведение: становится замкнутым, пытается
+контролировать свою силу, избегает людей.
+
+Надд, поняв, что Джон не ушёл, решает действовать. Он начинает распускать слухи
+через Нолана и Криса. Джон — сумасшедший, опасный, связан с исчезновениями.
+
+
+
+                                                                                      3
+Слухи доходят до школы Саши. Джон оказывается в изоляции. У него остаётся только
+Саша.​
+
+Почему это происходит: Джон не может уйти, потому что не хочет бросать сестру.
+Надд же боится Джона и хочет изолировать его, чтобы тот не лез в аномалии. Он
+использует единственный доступный ему инструмент — социальное давление.
+
+К чему это приводит дальше: Джон остаётся в городе, но его жизнь разрушена. Он
+один и не может никому доверять. Он не может рассказать правду. Он понимает, что
+Надд — враг но не может ничего доказать. ВСЁ. Обратной дороги нет.
+
+
+Событие 8. Разговор с отцом и точка невозврата
+Что происходит: Джон, доведённый до отчаяния, идёт к отцу. Он не ждёт помощи.
+просто хочет поговорить. Впервые за долгое время он заходит в его комнату. Отец
+сидит у окна, не реагирует. Джон говорит ему, что не знает, что делать. Что он боитсяб
+что Саша в опасности.
+
+Отец молчит. А потом что-то говорит. Одно слово. Или фразу. Что-то, что меняет всё.
+Джон выходит из комнаты. Он не знает, что делать дальше. Но у него есть зацепка. Он
+остаётся в городе с Сашей.
+
+Первая глава заканчивается на том, что Джон стоит у окна, Смотрит на город.
+И готовится к тому, что будет дальше.
+
+Почему это происходит: Джон больше не может держать всё в себе. Ему нужен хоть
+кто-то. Даже отец, который его не слышал годами. И отец, неожиданно для Джона,
+что-то знает. Это меняет всё.
+
+К чему это приводит дальше: Джон понимает, что его семья связана с этим больше,
+чем он думал. Это открывает новую линию. И это даёт ему новую цель: разобраться не
+только с «Тенью», но и с прошлым своей семьи. Первая глава заканчивается точкой
+невозврата. Джон больше не может быть обычным студентом. И его жизнь изменилась
+навсегда.
+
+
+
+
+                                                                                         4
+</pre></template><template id="doc-Лор Меровии Redraw.pdf"><h3>Лор Меровии Redraw.pdf</h3><pre class="document-text">Общее резюме лора Меровии и
+Архива
+Происхождение
+
+Около 300 лет назад целая цивилизация основателей решила собрать все знания в
+одном месте. Место выбрали стратегически выгодное, пригодное для строительства.
+Архив строили ярус за ярусом, вручную. Идеологов не было — идея была проста:
+сохранить всё. Первой записанной фразой стало «Мы — есть».
+
+Со временем ярусов стало так много, что их разделили на три сегмента, и эти
+сегменты стали называть ярусами заново (Верхний, Средний, Нижний). На самом дне
+— Сердце Архива, где хранятся самые древние знания. Последними его видели люди,
+бывшие там во время войны. Глубже Архива лежат древние человеческие артефакты
+— искусство, кости, сокровища.
+
+Архив больше не растёт.
+
+
+Меровия и её устройство
+
+Столица — Мнемополис. Государством управлял Совет из ста человек, избиравшихся
+честным голосованием по округам. Глава Совета на момент войны был против
+использования могущества Архива во зло.
+
+Религия: на государственном уровне от старых верований избавились, но возникла
+новая — Архивная Братия. Она появилась задолго до войны. Жрецы Братии в
+большинстве своём не посещали Архив — их церкви находились в удалённых
+провинциях. Они поклонялись Архиву как Богу на земле, снизошедшему до людей.
+
+Отношение обычных людей к Архиву было разным — от любви до страха. Именно из
+этого разного отношения выросли фракции, которые существуют и сейчас.
+
+Архив как сущность
+
+Около 100 лет назад Архив впервые проявил волю. Момент зафиксирован
+работниками. Архив говорит со всеми и с каждым, когда хочет. Он общается через сны,
+голоса, знаки, надписи на стенах. После очистки его голос стал тише, но те, кто внутри,
+всё ещё слышат его..
+
+Архив — единый разум. Он развивался, но не менялся по характеру. Он прагматичен,
+не злится, не мстит. Не помнит тех, кого стёр, — стирание было полным. Себя он никак
+не называет. Любимчиков среди мутировавших не имеет. Возвращать кого-либо после
+очистки не пытался.
+Война
+
+Война назревала медленно. Люди разбились на четыре фракции:
+
+1. Прежний порядок — сохранить всё как было.
+2. Уничтожение Архива — избавиться от него навсегда.
+3. Использование для могущества — взять силу Архива себе.
+4. Слияние — стать единым целым с Архивом.
+Первый удар нанесли те, кто был за могущество. Сражения шли везде — внутри
+Архива, на поверхности. Длилась война два года.
+
+
+Очистка
+Архив принял решение стереть людей, причастных к войне. Это была одномоментная
+вспышка, за которой наступила тишина. Совет не знал о грядущей очистке,
+договориться с Архивом никто не пытался. Первыми погибли обычные люди.
+
+Выжили две категории:
+
+- Те, кто был внутри Архива. Они продолжили жить там, питаясь редкими отростками
+еды, которую создавал сам Архив. Со временем начали мутировать — физически и
+ментально. У них рождались дети. Культура сохранилась частично. Отношение к
+Архиву разное — от дома до тюрьмы. Именно эти выжившие станут лидерами
+фракций во втором акте и поведут игроков за Архив или против него.
+
+- Те, кого сохранили в коконах. Решение приняла маленькая инициативная группа
+Хранителей, не власть. Они спасали вначале близких, потом всех, кто был рядом,
+заперлись и стали ждать. Их лидер не уснула — она следила за коконами до конца, но
+не дожила до пробуждения игрока. Коконы находятся под землёй. Часть людей вышла,
+часть спит, часть ушла. Преждевременное пробуждение означает одиночество и
+смерть.
+
+
+500 лет спустя
+
+Архив исцелился. Он стабилен, но больше не может накапливать информацию —
+только отдавать. Причина: шок и перенаправление знаний. Он начал звать оставшихся
+в коконах идти в себя.
+
+Внутри Архива остались те, кто хочет вырваться и использовать его мощь (рождённые
+в Архиве, испытывающие отвращение), и те, кто хочет навеки его запечатать (жители
+Архива, боящиеся мощи). Мутации выживших разнообразны: новые способы
+взаимодействия с Архивом и выживания.
+Великий архивариус
+
+Пятирукое создание, белое, тело разорвано ниже пояса, вместо ног — пустота и белая
+взвесь. Аура из плывущих символов, плотная внизу. Вместо головы — пучок перьев,
+похожий на перевёрнутое крыло.
+
+При жизни — фанатичный работник Архива, преданный ему. Мутации дали ему
+возможность взаимодействовать с Архивом напрямую. Физический облик — следствие
+мутаций и морального разложения. В первой встрече с игроком использует только
+обычный удар: игрока подбрасывает в воздух, и он падает через портал в общий мир.
+
+
+Вестибюль
+Хаб, где игроки появляются после пробуждения. Единственное место, где до сих пор
+действует мощнейшая часть силы Архива, не позволяющая свершиться насилию.
+Поэтому никто из фракций не может убить игрока при встрече, как и сами игроки
+друг-друга. Все они выжившие из Архива.
+Снаружи Архива поселений нет. Только игроки.
+
+
+Имена(были додуманы после написания текста выше)
+
+
+Имя(стилизовано под       Роль
+античность)
+
+
+Эвмен Аресид              Глава Совета, противник войны
+
+
+Дарет Орион               Советник, отдавший приказ на удар
+
+
+
+Ливия Ференика            Советница-миротворец
+
+
+Гелиодор                  Основатель Архивной Братии
+
+
+Каллад                    Верховный жрец на момент войны
+
+
+Ферида                    Лидер хранителей
+
+
+Акест                     Великий Архивариус (до мутации)
+</pre></template><template id="doc-ПовторяшкиСценарий.pdf"><h3>ПовторяшкиСценарий.pdf</h3><pre class="document-text">Часть вторая: Дизайны
+
+Начнём, пожалуй, с самого банального и закончим целыми сюжетными тропами, которые
+повторяются из сезона в сезон.
+
+Зелёный персонаж с чёрными волосами.
+
+Вы замечали, как часто появляются персонажи с такой цветовой палитрой? Самый
+очевидный пример — Эбардо. Забавно, что почти каждый такой персонаж играет полу
+антагонистическую роль. Взять того же Эбардо: его, конечно, можно назвать главным
+антагонистом «Голоса Времени», но по факту он был им от силы половину сезона, а то и
+меньше, потому что остальное время он был нашим союзником.
+
+Дальше идёт Дана, которая, наоборот, начинала как некая злодейка, а под конец работала
+вместе с нами (хоть и не совсем по своей воле). Если двух примеров мало, то вспомним
+Ричарда из «Последней Реальности». Сперва он предстал перед нами как задира и токсичная
+личность, но, Боже, каким же лапочкой он стал в финале!​
+Прямо как я.
+
+Ну ладно, таких персонажей не так уж много. Что вы скажете о фиолетовых персонажах с
+белыми волосами? Сразу на ум приходят Джодах, Сан-Фран, Салек, Джоди и Отец. А если
+заменить белый на чёрный, то получатся Междумерец, Теннет и Варнер.
+
+Интересно, что трое из них были антагонистами половину своего сезона, а один был лишь
+слегка затянут на вражескую сторону. Сан-Фран не был полноценным злодеем, но выступил в
+роли предателя, сливавшего информацию Эо. Салек — это злодей ради злодейства,
+приправленный бессмысленными поступками.
+
+Джоди же оказалась автоматоном и кошмарила нас добрую половину «Последней
+Реальности», хотя до Отца ей далеко: он продержался целых два сезона! Ну, справедливости
+ради, умер он тоже дважды. Вот это — настоящий финальный босс.
+
+Хотя его, пожалуй, перебил Междумерец, который присутствовал во всех сезонах, включая
+«Новое Поколение», раз за разом заманивая нас в ловушки. И всё равно в итоге проиграл.
+
+Теннет был злодеем половину «Последней Реальности» просто потому, что он «злой гений» —
+его мотивацию раскрыли не очень убедительно. То же самое можно сказать и о Варнере, хотя,
+если честно, у него была неплохая предыстория. Правда, не в сюжете «Нового Поколения», а в
+телеграм-канале Архимага. Что ж, сезон был первый, можно простить. Да и откуда взяться
+глубине, если до этого не было никакого сюжета?
+
+
+
+Часть третья(тропы)
+
+Дизайн дизайном, но интереснее поговорить о повторяющихся архетипах персонажей.
+
+Из сезона в сезон нам встречается просто приятный друг ГГ, с которым лампово общаться. В
+последнем сезоне это Айтор. Если заглянуть чуть раньше — Дилан, а вместе с ним и уже
+упомянутый Ричард. Не забудем и Альфреда, который, по правде говоря, половину сезона
+пролежал больным. Кто ещё? Седрик (все его версии) и, наконец, Радан. На самом деле таких
+персонажей было довольно много, хотя признаю — этот пункт довольно размытый.
+
+Куда конкретнее смотрятся персонажи-сомневатели. Именно они дают нам понять, что всё
+происходит не так, как кажется. И, как правило, это всегда женские персонажи. Например, в
+«Идеальном мире» это была Кейт, рассказавшая нам о тёмной стороне Империи. Туда же
+относится Лайя, приоткрывшая завесу Организации. В последнем сезоне эту роль играет
+Ветт, сеющая сомнения в душе Лопоклошки. Такие персонажи обычно двигают сюжет вперёд.
+Ну, кроме Лайи — она всегда шла только назад.
+
+Но ещё интереснее — предатель. Тот, кто входит в доверие, и в чьё предательство сложно
+поверить. Яркие примеры — Эо и Бурис. Сюда же с натяжкой можно отнести Сан-Франа, хотя
+он не совсем типичный предатель. И, конечно, грех не упомянуть снова Лайю.
+
+Любопытно, что Бурис и Эо совмещают в себе ещё один архетип — проводника. Эо ввёл нас в
+курс дела в «Голосе Времени», а Бурис сделал то же самое в «Тринадцати Огнях». В «Новом
+Поколении» эту роль играл Лофтарион, в «Игре Бога» — Бастиан. В «Идеальном Мире» — Кейт
+(или Райя, тут сложно сказать). В «Последней Реальности» наставником стала Джена, а в
+«Сердце Вселенной» — Невер. И уже в третий раз с натяжкой можно добавить Лайю, ведь
+именно она дала первую информацию об Организации.
+
+Но персонажи персонажами, а самые заметные повторения кроются в самих сюжетных
+линиях.
+
+
+
+Часть четвёртая(Сюжетные тропы)
+
+Многим, кто смотрел все сезоны, знакомо чувство дежавю. И не зря — некоторые сюжетные
+линии кочуют из проекта в проект.
+
+Например, троп «Всё не так, как кажется». Это было в «Идеальном Мире», где за глянцевой
+картинкой процветающей страны скрывалась тоталитарная система. То же самое — в «Точке
+Возврата», где сначала ничего не было понятно, а потом на нас вылили ушат объяснений, от
+которых легче не стало. Этот троп ярко проявился в «Последней Реальности», где многие до
+конца думали, что действие происходит в настоящем Хэнфорте. «Голос Времени» тоже грешит
+этим: сначала мы ничего не знали о Ведомни, думая, что находимся в Эрессии. Примерно то
+же самое мы наблюдаем и в «Мастерской 47».
+
+Часто повторяется и линия борьбы с организацией, мятежа и революции изнутри. Это было в
+«Империи», где мы притворялись добропорядочными гражданами, в той же «Организации», и
+теперь повторяется в «Мастерской 47». Честно говоря, противостояние с некой «высшей
+силой» было почти в каждом сезоне:
+
+   ●​   «Новое Поколение» — Варнер и его Сила.
+   ●​   «Игра Бога» — собственно, Боги.
+   ●​   «Идеальный Мир» — Империя.
+   ●​   «Голос Времени» — Фарагонда.
+   ●​   «Тринадцать Огней» — ТоИфэтун.
+   ●​   «Последняя Реальность» — ДжейДи Компани.
+   ●​   «Сердце Вселенной» — Церковь Очищения.
+   ●​   «Точка Возврата» — межвселенская сверхтехнологичная организация
+   ●​ «Мастерская 47» — мы против Глаза, Мудрецов или Разработчиков. Пока не ясно.
+
+Реже, но тоже встречается подставной антагонист — тот, кто кажется главным злодеем, но на
+поверку оказывается не тем, кем мы его считали. Это было в «Голосе Времени» с Фарагондой,
+в «Игре Бога» (где мы ошибочно принимали кого-то за врага), и в «Последней Реальности», где
+мы считали злодеем JDH, а им оказался сам Междумерец.
+
+
+
+Заключение
+
+В целом, повторение тропов — не всегда плохо. Но в последнее время это стало происходить
+слишком часто. Если в начале месяца я думал, что это только я обратил внимание, то к
+середине декабря это уже стало мейнстримной темой в фандоме.
+
+Да, проблема действительно есть. Хотелось бы увидеть оригинальность не только в сеттинге,
+но и в конкретных сюжетных ходах. Мы будто идём в масштабе, но в развитии сюжета
+топчемся на месте — просто повторяющихся линий в одном сезоне становится больше.
+
+Неудивительно, что сезон с большим количеством самоповторов начали критиковать. Я
+говорю о «Мастерской 47». И знаете, я — против этого хейта.
+
+Если верить, что Лоловёрс начал историю с чистого листа, то логично использовать
+проверенные, работающие тропы, которые, несмотря на свою узнаваемость, всё ещё
+интересны. «Мастерская 47» — это первый сезон для восстановления репутации после «Точки
+Невозврата», и я думаю, ему можно простить эти повторения. В конце концов, это не такая
+критичная ошибка, как сюжетные дыры.
+
+Да, сюжет зачастую повторяется. Да, мы уже многое видели. Да, хочется оригинальности. Но,
+думаю, нам стоит дать шанс новому «Лоловёрсу». Для новичков этой проблемы и вовсе не
+существует. Надеюсь, в следующих сезонах нас ждут по-настоящему свежие и интересные
+истории. По крайней мере, очень хочется в это верить.
+
+Пока.
+</pre></template><template id="doc-Акт Первый.pdf"><h3>Акт Первый.pdf</h3><pre class="document-text">Акт первый
+Вестибюль Архива (предбанник)
+
+Вестибюль — хаб для сюжетного контента. На момент написания неизвестно, готов ли
+он физически, поэтому здесь расписано то, что обязательно должно иметься, или подо
+что как минимум должно быть оставлено место.
+
+Обязательное:
+
+1. Место для спавна игроков и выхода из вестибюля.
+2. Центр зала.
+3. Место для выбора режима (соло / PvP). Можно реализовать одним порталом с меню
+или двумя разными порталами.
+4. Место под табло (фракции, общий зачёт) — появится во втором акте.
+5. Место под двух-трёх NPC, удалённых друг от друга — появится во втором акте.
+
+Размер: примерно 20×20 блоков.
+
+Атмосфера: таинственность, заброшенность. Можно использовать белые блоки и
+частицы, перекликающиеся с визуалом порталов и Архивариуса. Приглушённый свет,
+пыль в воздухе, эхо шагов.
+
+Архив внутри
+
+
+Каждый акт к действующему числу комнат, мобов и предметов будут добавляться
+новые. Стоит разбить текущее количество ассетов на три равные части и
+распределить по актам.
+
+Стартовая комната: игрок заходит в портал и появляется в стартовой комнате. В ней
+находится портал (обратный выход или точка сохранения) и первая небольшая
+добыча. Потенциально в качестве стартовой комнаты можно использовать рандомную
+локацию — решение будет принято позже, когда появится список готовых комнат.
+
+Первый ярус:
+
+• Максимальное число комнат: 10.
+• Количество мобов увеличивается с шагом 1.2 от комнаты к комнате, с округлением в
+большую сторону.
+• Количество наград в сундуках увеличивается по тому же принципу: ×1.2 с
+округлением вверх.
+
+Сундуки: помимо стандартного мусора можно обнаружить книгу на починку и три типа
+записок.
+Типы записок:
+
+• Воспоминания — основной источник лора, а также валюта и ресурс, необходимые
+для продвижения во втором и третьем акте. Собираются игроками, учитываются в
+общем зачёте фракции.
+• Цитаты — одноразовые записки, накладывающие положительные эффекты на
+игроков поблизости. При использовании в чат выводится сообщение.
+• Выкрики — противоположность цитат, аналог свитков заклинаний. При использовании
+также выводится сообщение в чат.
+
+Тексты записок, а также типы цитат и выкриков будут расписаны отдельным
+документом.
+
+Лут-таблица: будет составлена после получения списка готовых ассетов. До этого
+используется формула-заглушка.
+</pre></template><template id="doc-ЭденСценарий.pdf"><h3>ЭденСценарий.pdf</h3><pre class="document-text">Эден
+0. Вступление
+
+Посты триггера
+
+Точка невозврата закончилась, закончился и весь Лоловёрс, и нас ждёт новый сюжет с
+нуля. Причём в написании истории не будет участвовать главная сценаристка Камыш,
+печальная известная некоторыми скандалами. И команде из трёх сценаристок
+придётся, сами вершить новую историю... ну и как же здесь могло обойтись без
+конфликтов. Знакомитесь ЭДЕН, одна из новых сценариста сезона, а по
+совместительству Художник прона и во фанфиков по лололошке и главная звезда
+ЛОЛОТРИГЕРА, сообщества буквально посвящённое хейту, срачам и бомбежу, так что
+совсем не удивительно, что Триггер просто взорвался когда пошли слухи про пдф
+наклонности новой сценаристки, ОООО ДА ролик обещает быть интересным, ибо я
+РЭЙНАРД и мы погружаемся в пучину скандалов.
+
+1.Дисклеймер
+
+Я хочу, чтобы Вы его все-таки услышали, ибо я впервые касаюсь такой темы на
+своём канале, хотя раньше подобного я пытался избегать, а тут же чуть ли не в
+открытую, буду говорить про pdf и инцест.
+Так что прошу понять. Также, я не хочу, чтобы мой ролик превратился в
+разжигание ненависти, если Вы пойдёте после этого видео травить Эден,
+говорить, какой она плохой человек и все остальное. То Вы намного хуже, чем
+она, потому что при всех своих мерзких наклонностях Эден никому не вредит, и
+это важно. А также я понимаю то, что данная тема будет очень интересно тем,
+кто не находится в фантоме, поэтому я буду разжёвывать многие вещи,
+которые для нас и нашего фандома и так понятны.
+
+
+2. Попадение в команду
+
+Я удивлён, что Лолотриггер взорвался только сейчас. Ибо Эден не вчера стал
+сценаристом, она уже работала над сезоном Точка Невозврата,
+(тут можно вставить шутку про Точку Расзврата )
+она буквально есть в титрах сезона, в титрах присутствует голова скина,
+который она выкладывала в свой канал. Как сценариста её упоминают Архимаг
+и Камыш. Так что вопросов с тем, что она уже работала над предыдущим
+сезоном, быть не должно.
+И сейчас, услышав то, что она работала над сезоном Точка Невозврата, у
+многих конспирологов в голове кое-что пронеслось.
+
+(Вставка из сезона)
+Малецки и Лая, они типа мама и сын? А Лая такая, так ты у нас ничего не
+понимаешь.
+
+Но нет, ребята. Я сомневаюсь, что она работала над сезоном на столь ранних
+сериях. Да и пытаться притянуть это за полноценную pdf линию было бы
+натягиванием совы на глобус.
+
+ В данном случае стоит оьратить внимсение на компетентность её как
+сценариста. Из опыта у неё только фанфики. И нет, сами по себе фанфики не
+есть сразу что то плохон. Просто доминирующее число из них это подключение
+всевозможных персонажей друг к другу. Заметное меньшинство джен работ..
+
+(вставка с ФБ что такое джен,
+ если коротко, это работы без секса и романтики)
+
+…написано минимум в прошлом году.
+
+Других публичных писательских работ у неё нету. Да и те, кто вчитывались в эти
+фанфики отмечали, что написаны они довольно плохо. Лично я ничего не могу
+сказать про то, как они написаны. Во первых, я не сильно силён в сценарном
+мастерстве, я могу ответить только за логику, сломанное повествование и
+сюжетную дыру сценария, но никак за её написание.
+
+Ссылок не будет.
+
+
+3. ПДФ наклонности и закрытый канал
+
+Довольно о скилле, для кого то это может быть и субъективным показателем.
+Перейдём к тому, ради чего Вы все тут собрались.
+А вот самое интересное начинается в её даже открытом, публичном Телеграм
+канале.
+Ибо прямо здесь она и рисует, и выкладывает нарисованную по Ложке. А также
+своюписанину, сами знаете какого характера.
+И знаете? В этом нет ничего плохого. И сейчас меня довольно многие могут
+притянуть за лицемерие, ведь когда-то я нагнал на Камыш за ту самую
+рекламу, кхм, Дженни мода.
+
+Кто не знает, мод, в простонародии прозванный Дженни по имени одной из
+NPC, это мод на, так сказать, подключение игрока к различного рода моделькам
+в Майнкрафте.
+Тут стоит понимать, что претензия была больше к тому, что Камыш по её же
+словам, ответственно подходит к рекламе. Но это всё не так буквально.
+Чисто в теории, восьмилетний ребёнок смотрит Лошка и также уже не в теории,
+любой восьмилетний ребёнок умеет нормально пользоваться Телеграмом. У
+меня есть младший брат, которому ровно столько лет, и я знаю, о чем говорю.
+
+ Я понимаю то, что чисто теоретически маловероятно,что ребёнок случайно
+попадёт в её Телеграм канал, случайно скачает мод, установит его на
+Иайнкрафт, случайно зайдёт в мир, случайно активирует мод и случайно
+травмируется ну очень маловероятно.
+Но тут суть в самом существовании этой рекламы, когда сценаристка говорит,
+насколько она ответственно подходит к выбору рекламы
+И не рекламирует какие-то кликеры по типу Хомяков ой, а также у нас
+сценаристка против анарексии.
+Ой.
+
+(Тут будут вставлены посты с рекламой Камыша)
+
+Ну, а Эден, другой случай, ведь у неё буквально в названии канала есть
+пометка восемнадцать плюс. Которой нету Камыша. И давайте честны, если Вы
+человек, который можете травмироваться от порнухи, и при этом зашли в канал
+с пометкой восемнадцать плюс, думая, что там не будет восемнадцать плюс
+контента, то это уже и правда сугубо Ваша проблема.
+Но, несмотря на это, проблемы у нас начинаются в Телеграм канале.
+
+Ведь в описании канала буквально написано, что анти́сам тут не рады. Кто
+такие антисы?
+Если коротко,
+
+(Шутка про неправильное определение)
+В современной астрологии антис – проекция положения планеты…
+Кхм, не то
+
+На самом деле, этот вопрос гораздо глубже. Корни идут в так называемый
+шип-дискусс. Уже много лет художники, писатели, хоббихорсеры и прочие
+творческие личности спорят о том, кого можно шипперитт между собой, какие
+пейринги норм а какие жесть.
+
+Есть люди, которые считают, что всех можно шипперитт с кем угодно.
+
+И есть антисы, которые считают, что инцестные и педофильские шипы не
+имеют права на существование.
+Который выступает против сомнительных пейрингов.
+Пейринг, если что, это взаимоотношение двух и более пероснажей, чаще
+конечно романтическое.
+И то есть, раз она уже не рада тем, кто выступает против сомнительных
+перингов, это уже вызывает вопросы.
+ Но настоящий треш происходит в её закрытом канале и, к счастью, я нашёл
+человека, у которого есть доступ к этому каналу, и он предоставил мне многие
+скрины с данного канала, большу́ю кучу информации, за что ему огромное
+спасибо. А что у нас есть в этом канале? Ну это можно написать только одним
+словом.
+
+Грязь.
+
+Мерзкая первобытная грязь
+Грязь. Которая доводит до оргазма тех, кто находится в этом канале.
+И здесь мы наконец то подошли к тому, что за что её хейтят. Здесь у нас
+буквально шип, двух братьев Джодха и Джейса. Шипперство отца и сына
+Эграсселя и Маврия, где Эгроль проявляет нездоровую любовь к своему отцу,
+когда отец его ненавидит.
+Ну, в жизни примерно так и происходит. Наверное, лично у меня хороший отец.
+А также секс Лопоклошки, с сыном альтернативной версии себя. Причём сын,
+буквально подмечается, в подростковом возрасте, а Лошка — тысячелетнее
+существо, и какого хрена?
+ То есть это буквальное подтверждение pdf наклонностям. Ну как, ну это
+относит, ну, как к этому относятся сами подписчики её канала? Почему никто
+ничего не выражает против? Ну, вы немного забыли то, что сообщество
+закрытое и по факту аудиторию часто выбирает сам автор, как думаете, как
+много людей которые против того, что происходит в этом канале. Но при этом
+там сидят. Очень мало здесь мы можем увидеть просто тонны восторженных
+комментариев того как люди буквально восхищаются тем, что она пишет. Всем
+реально нравятся фанфики, всем реально нравятся шипы подобного
+характера.
+
+
+4. Плохо ли это.
+
+Меня это очень напрягает, но насколько это плохо?
+Все, что происходит в этом канале, это мерзко, я не выношу инцест, ещё
+больше я не выношу pdf, а ещё pdf с инцестом в одном флаконе. Я надеюсь
+Ютуб меня не забанит, за такое.
+ В какой-то момент становилось невыносимо все это читать, невыносимо
+читать то, как двадцатилетний, по её же словам человек, берёт и рассуждает о
+таких вещах, на радость своему сообществу, которое её во всем поддерживает.
+То, что она спокойно может обсуждать свои дарк шипы.
+И тут скорее дело в том-то, что я и она росли просто в разных обществах, у
+меня совершенно другое воспитание, и, несмотря на то, что я не один год
+нахожусь в Интернете, для меня это все равно дико. Но можно ли назвать Эден
+и её сообщество плохими людьми?
+Нет, знаете, это просто сообщество, да, с очень спорными наклонностями, да.
+Возможно, мной осуждаются вещи, о которых они пишут. И да, писать то, что
+они делают, мерзко, но делают ли они что-то плохое? Это буквально фанфики с
+выдуманными персонажами, большинство персонажей это даже не чьё то
+альтер эго, помимо Лолошки. Это просто сообщество по интересам, хоть и
+интересы у них сомнительные. Пока Эден и правда не насилует детей или
+своих родственников, называть её плохим человеком или человеком,
+достойным отмены, нельзя.
+Другой уже вопрос, если данные наклонности отразятся в сезоне.
+ Но но и уже, если буквально в сезоне по Майнкрафту на миллионы просмотров
+будут показаны условно инцест или отношения, причём в хорошем или
+восхваляющем виде, то это буквально конец репутации, но тут уже отменять
+придётся не одну Эден, а всю команду Сторителлинг, включая Рому. И давайте
+так. Все её наклонности просто не могут отразиться в конечном сценарии, ибо
+для этого в команде Вилки маразмом должны болеть вообще все, то есть
+главная сценаристка Саша, Архипелаг, все кто рисует текстуры, все кто
+анимирует, кто это кодит буквально сам Ложка, который, на минуточку, более
+десяти лет на Ютубе как автор и явно уже знает правила сообщества, и,
+очевидно, он не допустит подобное в своём сезоне. Так что бояться, что это
+просочится в сезон не стоит.
+
+
+5. Набор сценаристов
+Я больше обратил внимание на то, какой она сценарист. Ну как такой человек
+вообще мог попасть в СТ? Ну так вот, дело все в Архи-химаге и честно, я
+вообще не понимаю, по каким принципам он выбирает людей. Ему наплевать
+на то, что он делает? То есть внимание.
+Как попала Эден? Ну, Архимед просто взял, написал ей в анонку, дал тестовое
+задание, она его выполнила, её приняли.
+ Художники проходят отборы, программисты должны обладать навыками.
+ А тут я не знаю. Архимаг увидел член, и решил вот он, новый сценарист! И как
+это вообще происходит это огромная проблема. То есть сценаристы в Стрии
+Тим набираются по знакомствам.
+Хотя нет, я понимаю, как она попала. А Вы просто посмотрите то, как она им
+наяривает, то есть такое количество хвалебных постов. Такое количество
+текста, где она разбирает этих холопрв, диванных критиков. Ладно, на самом
+деле, она просто задела меня за живое.
+Она во всем и всегда защищает Команду, и если именно по таким принципам
+там набирают людей, то неудивительно.
+Почему последние сезоны все больше скатываются в пропасть, к этому
+подключается и их восприятие критики? Ну, знаете, как определить, что человек
+находится в СТ?.
+Ну, у него по любому есть правила подобного характера,
+( Здесь будет вставляться правила из её ТГ канала о критике)
+ Ну то есть да, буквально, мне запретили, а я все равно сделаю это видео.
+
+
+6. Заключение
+Стоит вопрос, а почему тебе не плевать, каким в итоге получится сезон? Да все
+просто, мы серьёзно относимся к этому сезону, мы критикуем потому что мы
+являемся настоящими его фанатами, мы не видим в этом какой-то детской,
+лёгкое произведение. Мы росли с этими сезонами, росли вместе с
+персонажами, вместе с их арками. Задумывались о темах, которые поднимают
+сезоны, задумывались о том, как, что хотят показать нам эти сезоны, это не
+просто детская история. Это сезоны, это история, которая многим, подарила
+детство, будущее, а возможно, и понимание мира. Мы правда, любим то, что
+делает команда, но в последнее время все это все больше скатывается в
+какую-то непонятную пучину. А качество сезонов сценарный, да и с
+геймдизайнерской стороны падает.
+               ■​ И, всем, пока.
+</pre></template><template id="doc-Сцена пробуждение redraw.pdf"><h3>Сцена пробуждение redraw.pdf</h3><pre class="document-text">Пробуждение игрока (v2.1)
+Локация Тёмный зал.
+
+Рядами уходят в темноту коконы из белой массы — большинство разбиты, некоторые
+темны и сухи, единицы ещё светятся белым светом. Игрок появляется в одном из них.
+После регистрации (если на сервере стоит плагин) кокон трескается, выпуская игрока.
+В воздух поднимаются белые частицы.
+
+Озвучка (голос Фериды)
+Уставший, спокойный. Человек, который знал, что умрёт, и оставил запись.
+
+Голос: Ты проснулся. Наконец-то. Я ждала этого очень долго.
+Ферида: Меня зовут Ферида. Я — Хранительница. Я говорила с тобой перед тем, как
+ты уснул. Теперь говорю после.
+Ферида: Я не дожила. Это — запись.
+Ферида: Слушай внимательно. Много лет назад, уж и не знаю сколько, началась война.
+Ферида: Архив заболел. Он стёр почти всех.
+Ферида: Мы — Хранители — спрятали вас здесь. Под землёй.
+Ферида: Теперь Архив исцелился. Он зовёт тебя. Он хочет отдать знания.
+Ферида: Твоя память скорее всего повреждена, но Архив расскажет всё сам.
+Ферида: Вот что осталось, я выведу тебе это.
+Ферида: Иди к нему. Не бойся. Мы сделали что могли.
+Ферида: Дальше — ты сам.
+
+Текст в чате
+Сразу после слов “Я выведу тебе это” в чат выводятся следующие строки, можно
+сделать визуализацию(парящие слова):
+Имя: {ник}
+Возраст: {random 18-160} лет
+Специальность: {по таблице}
+Сохранность памяти: {random 10-40}%
+Статус: гражданин Меровии
+Проведено в стазисе: 510 лет
+Сцена после пробуждения
+Когда игрок проходит мимо рядов пустых коконов, в воздухе перед ним из белых
+частиц собирается портал — мерцающий, неровный. Это первый вход в Архив. Игрок
+входит — и оказывается на арене с боссом.
+
+Босс: Великий архивариус
+Пятирукое создание, преимущественно белое. Тело разорвано ниже пояса — вместо
+ног пустота, из которой сочятся частицы, что была в портале.
+Окружено аурой из плывущих символов, наиболее плотной внизу, у разрыва. Вместо
+головы — пучок перьев. Атак в этой фазе у босса одна: обычный удар. Он
+выбрасывает вперёд одну из рук — игрока подбрасывает в воздух. В высшей точке под
+игроком открывается портал, и он падает в него, перемещаясь в обычный мир, к
+остальным игрокам.
+
+Случайная специальность:
+Картограф
+Архивариус
+Писец
+Переписчик
+Переплётчик
+Библиотекарь
+Хранитель фондов
+Каталогизатор
+Реставратор
+Иллюстратор
+Гравёр
+Чернильщик
+Бумажник
+Ткач
+Красильщик
+Портной
+Кожевник
+Стеклодув
+Гончар
+Кузнец
+Литейщик
+Ювелир
+Часовщик
+Мельник
+Пекарь
+Пивовар
+Винодел
+Сыровар
+Пчеловод
+Фермер
+Садовод
+Травник
+Парфюмер
+Мыловар
+Свечник
+Каменщик
+Каменотёс
+Плотник
+Столяр
+Стекольщик
+Землекоп
+Водонос
+Фонарщик
+Курьер
+Носильщик
+Привратник
+Конюх
+Возничий
+Корабельщик
+Рыбак
+Моряк торгового флота
+Почтальон
+Тюремный надзиратель
+Оружейник
+Бронник
+Подрывник
+Связной
+Интендант
+Военный писарь
+Вербовщик
+Механик
+Инженер
+Чертёжник
+Астроном
+Астролог
+Математик
+Химик
+Алхимик
+Анатом
+Врач общей практики
+Переводчик
+Шахтёр
+Архитектор
+Строитель
+Мостостроитель
+Металлург
+Стекольщик
+Оптик
+Часовщик
+Хранитель яруса
+Смотритель разломов
+Кодификатор
+Дешифровщик
+Переводчик мёртвых языков
+Хронист
+Судья
+Уборщик
+Картограф Архива
+Связник Архива
+Поэт
+Писатель
+Драматург
+Философ
+Гувернёр
+Музыкант
+Художник
+Скульптор
+Резчик по камню
+Резчик по дереву
+Витражник
+Цирюльник
+Костоправ
+Повитуха
+Сиделка
+Бальзамировщик
+Изготовитель протезов
+Баснописец
+Эпиграммист
+Карикатурист
+Силуэтист
+Шарманщик
+Мим
+Канатоходец
+Глотатель огня
+Дрессировщик
+Фонарщик сцены
+Суфлёр
+Шляпник
+Перчаточник
+Сапожник
+Дубильщик
+Косторез
+Угольщик
+Обжигальщик
+Печник
+Трубочист
+Ледоруб
+Солевар
+Мозаичник
+Танцор
+Актёр
+Кукловод
+Диктор
+Фокусник
+Смотритель маяка
+Звонарь
+Могильщик
+Плакальщик
+Зазывала
+</pre></template><template id="doc-Записки(сто штук).pdf"><h3>Записки(сто штук).pdf</h3><pre class="document-text">1. Первый камень. Сегодня заложили первый камень. Никто не знал, во что это
+вырастет. Просто хотели сохранить. Просто боялись забыть. Я был там. Я держал
+мастерок. Моё имя не запомнят. Но первый камень помнит.
+
+2. Говорят, когда вырыли первый ярус, из земли пошёл свет. Не лава, не вода — свет.
+Решили: хороший знак. Продолжили копать. Теперь я думаю: может, это было
+предупреждение.
+
+3. Основатели не оставили имён. Не хотели. Говорили: Архив не про нас, Архив про
+знания. Я уважаю это. Но иногда думаю — неужели никто не хотел, чтобы его
+помнили? Хотя бы в строчке? Хотя бы вот так?
+
+4. Мы строили вручную. Никакой магии, никаких машин. Камень, дерево, руки.
+Говорили: Архив должен быть человеческим. Знали бы они, во что он превратится.
+Хотя... может, в этом и дело. Слишком человеческим.
+
+5. Сегодня закончили второй ярус. Праздновали три дня. Вино лилось, песни пели.
+Кто-то сказал: теперь нас не забудут. Интересно, кто-нибудь сейчас помнит наши
+песни?
+
+6. Архив задумывался как хранилище. Но он стал домом. Мы живём в нём, едим в
+нём, растим детей в нём. Я не жалуюсь. Просто замечаю.
+
+7. Первая запись, которую внесли в Архив: &quot;Мы — есть&quot;. Коротко и ясно. Я читал её.
+Мне было десять. Я не понял тогда. Теперь понимаю. И от этого страшно.
+
+8. Старики говорят: когда заложили первый камень, земля вздохнула. Буквально. Они
+думали — ветер. Но под землёй не бывает ветра. Я записываю это. Пусть кто-то потом
+решит, правда или нет.
+
+9. Три сегмента. Верхний — наука. Средний — эксперименты. Нижний — история. Так
+нам объясняли в школе. Но чем глубже я спускаюсь, тем меньше понимаю, где
+заканчивается одно и начинается другое.
+
+10. Сердце. Я не был там. Никто из моих знакомых не был. Но все говорят о нём так,
+будто видели. Может, Архив показывает его во снах? Мне не снилось. Пока.
+
+11. Разлом номер три расширяется. Я измерял. За сутки — на пол-локтя. Это не
+нормально. Я доложил. Мне сказали: не вмешивайся. Архив знает. Я не сплю вторую
+ночь.
+
+12. Говорят, есть ярусы, которых нет на картах. Не тайные — забытые. Их строили, а
+потом бросили. Или Архив спрятал. Я искал. Не нашёл. Может, и к лучшему.
+
+13. В нижнем сегменте темно. Не как ночью — по-другому. Темнота там живая. Она
+смотрит. Я ходил однажды. Вернулся. Но иногда мне кажется, что часть меня осталась
+там.
+14. Символы на стенах. Они есть везде, но в среднем ярусе их больше всего. Кто их
+пишет? Я дежурил ночью — стена была чистой. Утром — символы. Никто не входил. Я
+проверял.
+
+15. Архив не растёт больше. Раньше рос. Ярусы прибавлялись, коридоры удлинялись.
+Теперь — нет. Старики говорят: он достиг своего предела. Я думаю: или предела, или
+цели.
+
+16. Глубже Сердца — древние артефакты. Не наши. Кости, искусство, сокровища. Кто
+жил здесь до нас? Архив молчит. Может, он и сам не знает. Может, он построен на
+чём-то более древнем.
+17. Мнемополис. Город памяти. Я жил там. У восточных ворот, над булочной. Булочник
+пёк хлеб с розмарином. Я до сих пор помню запах. Только запах. Лица уже стёрлись.
+
+18. Рынок у западной стены. По четвергам привозили ткани из провинций. Красный —
+кошениль, синий — индиго. Я торговалась. Теперь красный — это цвет войны. Синий
+— цвет неба, которого я не вижу.
+
+19. В Мнемополисе был фонтан. В центре города. Говорили, вода из него — слёзы
+Архива. Я смеялся. Теперь думаю: может, и правда.
+
+20. Школа переписчиков. Лучшие годы. Мы зубрили античных авторов, спорили до
+хрипоты, влюблялись. Я помню всех. Всех, кто не дожил до войны. Это всё, что от них
+осталось — моя память.
+
+21. Меровия была красива. Поля, виноградники, старые дубы у дорог. Я ездил в
+провинции с отцом. Он был торговцем. Теперь нет ни полей, ни отца, ни Меровии.
+Только Архив.
+
+22. В каждом округе был свой представитель в Совете. Честные выборы, говорят. Я не
+голосовал — был слишком молод. Теперь не у кого спрашивать, правда ли это.
+
+23. Почта Меровии. Голуби и курьеры. Письма шли три дня до дальних провинций. Я
+писал любимой. Она отвечала. Где теперь эти письма? Где теперь она?
+
+24. Государство без религии, говорили в Совете. Мы избавились от старых богов. Но
+свято место пусто не бывает. Архив заполнил его. Не сразу. Постепенно. Как вода
+заполняет трещины.
+
+25. Эвмен Аресид. Глава Совета. Я видел его однажды. Он шёл по западному
+коридору, один, без охраны. Я поклонился. Он кивнул. У него были усталые глаза.
+Очень усталые.
+
+26. Дарет Орион говорил речи. Красивые речи. О могуществе, о будущем, о том, что
+Архив — оружие. Ему хлопали. Я тоже хлопал. Теперь я жалею об этом.
+
+27. Ливия Ференика. Единственная, кто сказала &quot;нет&quot; открыто. Я читал её письмо. Оно
+ходило по городу за неделю до войны. Она знала, что умрёт. Она всё равно написала.
+28. Совет из ста человек. Сто голосов. Но решение приняли не они. Решение приняли
+те, кто кричал громче. А Совет... Совет просто промолчал.
+
+29. Заседания Совета были открытыми. Любой мог прийти и послушать. Я ходил
+дважды. Скучно. Бесконечные прения о налогах и границах округов. Кто бы мог
+подумать, что через год они будут решать судьбу мира.
+
+30. Выборы. Я помню выборы. Сосед агитировал за кандидата от нашего округа.
+Говорил: он будет защищать наши интересы. Интересно, что он говорит теперь. Если
+он ещё жив.
+
+31. Коррупция? Не знаю. Говорили, что в Совете есть те, кто брал взятки. Но это
+всегда говорили. На то он и Совет. Я не верю, что из-за денег началась война. Из-за
+страха. Из-за амбиций. Деньги — просто предлог.
+
+32. После войны я видел одного из советников. Он прятался в нижних ярусах,
+обросший, грязный. Я не назвал его по имени. Он не назвал меня. Мы просто
+разошлись. О чём говорить? Всё уже сказано.
+
+33. Гелиодор. Говорят, он первым назвал Архив богом. Не метафорически —
+буквально. Я читал его труды. Красиво. Но он никогда не спускался ниже третьего
+яруса. Может, если бы спустился — передумал бы.
+
+34. Братия строила храмы в провинциях. Далеко от Архива. Почему? Боялись? Или не
+хотели, чтобы кто-то проверил их слова? Я служил в храме. Я верил. Теперь не верю.
+Но привычка молиться осталась.
+
+35. Каллад. Верховный жрец. Я видел его церемонии. Золото, песнопения, дым.
+Красиво. А потом я узнал, что он никогда не входил в Архив. Ни разу. Как можно
+служить тому, кого ты не видел?
+
+36. Иона. Молодая жрица. Говорят, она слышала Архив по-настоящему. Не ритуалы,
+не молитвы — прямой голос. Её объявили еретичкой. А потом она исчезла. Архив
+забрал её? Или Братия?
+
+37. В храме пахло свечами и старыми книгами. Я любил этот запах. Теперь, когда я
+чувствую его в Архиве, меня тошнит. Не от запаха. От воспоминаний.
+
+38. Молитва, которую мы повторяли: &quot;Свод надо мной, тишина во мне, знание — свет&quot;.
+Я до сих пор шепчу её перед сном. По привычке. Или по вере. Уже не различаю.
+
+39. Братия распалась после войны. Жрецы разбежались. Кто-то погиб, кто-то
+спрятался, кто-то переосмыслил. Я встретил одного в нижних ярусах. Он молился. Я
+не стал мешать. Молитва — это личное.
+
+40. Архив — бог? Не знаю. Боги не болеют. Боги не устают. Боги не умирают. А Архив...
+Архив устал. Я вижу это. Я чувствую. Может, он просто очень старый человек.
+41. Около ста лет назад Архив заговорил. Не книгами, не записками — голосом. Я не
+слышал, но мой дед слышал. Он говорил: это было как мысль, которая пришла сразу
+всем. Невозможно забыть.
+
+42. Архив говорит со мной во сне. Не каждую ночь, но часто. Он не говорит слов. Он
+показывает. Дерево с белыми листьями. Дверь без ручки. Лестницу, ведущую вверх и
+вниз одновременно.
+
+43. Единый разум. Так говорят. Архив — не множество, а один. Но иногда я чувствую:
+здесь есть что-то ещё. Что-то древнее Архива. Оно спит. Надеюсь, не проснётся.
+
+44. Архив прагматичен. Он не злится. Он не мстит. Он просто делает то, что считает
+нужным. Это страшнее любой злости. Злость можно понять. Прагматизм — нет.
+
+45. Сны Архива. Иногда они просачиваются в наши головы. Я видел, как рождались
+ярусы. Как камень расступался, освобождая место для книг. Это было красиво. Я
+проснулся в слезах.
+
+46. Он не помнит тех, кого стёр. Так говорят. Но иногда мне кажется, что он помнит.
+Просто не говорит. Просто ждёт, когда мы сами вспомним.
+
+47. Архив не называет себя. У него нет имени. &quot;Архив&quot; — это то, что дали мы. Может,
+ему не нужно имя. Может, имена — это для смертных.
+
+48. Он любит тишину. Я заметил. Когда в Архиве шумно — символы на стенах
+тускнеют. Когда тихо — они сияют. Я стараюсь ходить бесшумно.
+
+49. Война висела в воздухе задолго до первого удара. Как гроза. Все чувствовали, но
+никто не хотел верить. Я тоже не верил. Дурак.
+
+50. Дарет Орион отдал приказ. Я не слышал, но говорят, он сказал: &quot;Архив — оружие,
+и мы возьмём его&quot;. Интересно, что он думал за секунду до смерти. Если успел
+подумать.
+
+51. Первый удар. Я был на третьем ярусе, переписывал книгу. Вдруг стены
+вздрогнули. Я подумал — землетрясение. Это была не земля. Это были люди.
+
+52. Они кричали: &quot;За могущество!&quot;. А с другой стороны: &quot;За прежний порядок!&quot;. Я
+сидел в углу и не кричал ничего. Я просто хотел, чтобы это закончилось. Не
+закончилось.
+53. В коридорах дрались. В комнатах дрались. Даже в библиотеках. Книги горели.
+Тысячи лет знаний — и они горели. Я пытался тушить. Меня оттолкнули. &quot;Не до книг
+сейчас&quot;, — сказали.
+
+54. Мой друг пошёл воевать за могущество. Я — за порядок. Мы встретились через
+месяц. Он не убил меня. Я не убил его. Мы просто стояли и смотрели друг на друга. А
+потом разошлись. Это была наша последняя встреча.
+55. Два года. Всего два года. А казалось — вечность. Я забыл, зачем мы воюем. Все
+забыли. Но продолжали убивать. По инерции. По привычке.
+
+56. Фракции. Четыре? Или больше? Я уже не помню. Прежний порядок, уничтожение,
+могущество, слияние. Слова. Просто слова. А за словами — кровь.
+
+57. Сражения шли везде. На поверхности — за Мнемополис. Внутри — за ярусы. Я
+воевал на третьем. Мне говорили: ты защищаешь знание. Я защищал стены. Знание
+горело у меня за спиной.
+
+58. К концу войны я перестал узнавать людей. Не потому, что они изменились внешне.
+Потому, что у них изменились глаза. Пустые. Как у Архивариуса сейчас.
+
+59. Это была вспышка. Я не видел — я был внутри. Но говорят: белый свет. Очень
+яркий. И тишина. Абсолютная тишина. А потом — ничего.
+
+60. Я выжил чудом. Закрылся в дальней комнате, заложил дверь книгами. Свет
+просочился сквозь щели, но не коснулся меня. Когда я вышел — всё было иначе.
+Пусто. Тихо.
+
+61. Архив стёр их. Не избирательно — всех, кто был причастен. А кто не был
+причастен? Мы все были причастны. Просто кто-то больше, кто-то меньше. Архив не
+разбирался.
+
+62. Первыми погибли обычные люди. Не солдаты, не советники — горожане. Те, кто
+просто был рядом. Я видел их. Они не поняли, что произошло. Просто исчезли.
+
+63. Совет не знал. Никто не знал. Архив не предупредил. Он просто... сделал.
+Прагматично. Без злости.
+
+64. После очистки я ходил по пустым коридорам и звал. Мне отвечало эхо. Сначала я
+думал — выжившие. Потом понял — это мои собственные слова, отражённые
+стенами. Архив молчал.
+
+65. Тишина после очистки была страшнее войны. На войне были крики. Здесь —
+ничего. Только шелест страниц. Архив дышал. Он был жив. Мы — нет.
+
+66. Говорят, Архив не помнит тех, кого стёр. Но иногда я нахожу записки. Их никто не
+писал — они появляются сами. Может, Архив помнит. По-своему.
+
+67. Первые годы после очистки мы ели то, что давал Архив. Отростки на стенах.
+Белые, горькие. Но питательные. Кто-то говорил — это его плоть. Мы ели. Выбора не
+было.
+
+68. Мутации начались не сразу. Через поколение. У моей дочери глаза светятся в
+темноте. Она не боится. Она родилась здесь. Она не знает, что так не должно быть.
+69. Первый ребёнок, рождённый внутри. Мы назвали его Свет. Он плакал, а стены
+отвечали эхом. Архив принял его. Я не знаю, хорошо это или плохо.
+
+70. Мы учим детей читать по старым книгам. Но многие книги пусты. Архив забрал
+слова? Или они исчезли вместе с теми, кто их написал? Не знаю.
+
+71. Культура сохранилась частично. Мы поём старые песни. Но мелодии искажаются.
+Архив подпевает — и песни звучат иначе. Иногда лучше. Иногда страшнее.
+
+72. Мутанты. Так нас называют. Но мы не одинаковые. Кто-то сросся со стенами.
+Кто-то слышит Архив постоянно. Кто-то изменился только внешне. Я — из последних.
+Пока.
+
+73. Дети, рождённые здесь, не боятся темноты. Они выросли в ней. Это мы, старики,
+помним свет. Они не помнят. Может, это к лучшему. Меньше боли.
+
+74. Я не хочу мутировать. Я держусь. Но Архив зовёт. Он шепчет: &quot;Приди. Стань
+частью. Будет легче&quot;. Я сопротивляюсь. Пока.
+
+75. Ферида. Я помню её. Она была маленькой женщиной с большими руками. Руки
+Хранителя — грубые, в мозолях. Она касалась коконов так нежно, как я не касался
+своих детей.
+
+76. Хранители не были властью. Они были просто людьми. Инженерами, которые
+поняли, что надо делать. Спасать. Не всех — но хоть кого-то. Я уважаю их за это.
+
+77. Коконы сделаны из плоти Архива. Ирония: мы спрятались от него в нём самом. Как
+parasite в теле хозяина. Надеюсь, он не обижается.
+
+78. Зал с коконами. Я был там однажды. Ряды белых саркофагов. Внутри — люди.
+Спят. Я не подошёл близко. Боялся разбудить. Или боялся, что не проснутся.
+
+79. Ферида не уснула. Говорят, она следила за коконами до самой смерти. Её нашли у
+пульта. Она улыбалась. Это единственное, что даёт мне надежду.
+
+80. Стазис был риском. Никто не знал, сработает ли. Но выбора не было. Сверху —
+война. Внутри — Архив, который стирал всех. Коконы были единственным выходом.
+
+81. Коконы светятся. Не все — некоторые темны. Я смотрел на тёмные и думал: вот
+этот не проснётся. И этот. И этот. А потом отворачивался. Слишком тяжело.
+
+82. Хранители не спасли мир. Но они спасли людей. Может, этого достаточно. Может,
+большего и не нужно.
+
+83. Эйра говорит: уничтожить. Я слушаю её и думаю: она права. Архив — тюрьма. Но
+я не хочу умирать. Даже ради свободы.
+84. Кефал говорит: изучить. Старый дурак. Что тут изучать? Мы пятьсот лет живём
+внутри, и мы ничего не знаем. Но я слушаю его. Потому что он хотя бы не хочет
+убивать.
+
+85. Ликон говорит: стать Архивом. Безумие. Но в его безумии есть логика. Если нельзя
+победить — может, надо возглавить? Я не знаю. Я вообще ничего не знаю.
+
+86. Три фракции. Три пути. А есть четвёртый: ничего не делать. Я выбрал его. Пока.
+Но Архив не даёт сидеть спокойно. Он зовёт.
+
+87. Споры у входа в Вестибюль. Эйра кричит на Кефала. Кефал молчит. Ликон
+улыбается. Я стою в стороне. Иногда мне кажется, что мы все проиграем. Все три
+фракции. И Архив останется один.
+
+88. Фракции борются за записки. Как будто это что-то меняет. Но я понимаю: записки
+— ключ. Ключ к Сердцу. А Сердце — ключ ко всему. Может, к свободе. Может, к концу.
+
+89. Я не вступил ни в одну фракцию. Не потому, что не верю. Потому, что верю во все
+три. И в уничтожение, и в изучение, и в могущество. Как выбрать, когда каждая права
+по-своему?
+
+90. Лидеры фракций. Они не боги. Они просто люди. Уставшие, злые, напуганные. Как
+и мы. Просто они решили действовать. А мы — ждать. Может, хватит ждать?
+
+91. Я видел его. Издалека. Пять рук, перья вместо головы, пустота ниже пояса. Он не
+ходит — он плывёт. И от него исходит холод. Не телесный — душевный.
+
+92. Говорят, архивариус был человеком. Фанатиком. Он спустился к Сердцу и
+вернулся другим. Что он там увидел? Что Архив сделал с ним? Никто не знает. Но я
+думаю: он согласился. Добровольно.
+
+93. Архивариус не нападает первым. Он ждёт. Я проходил мимо — он просто смотрел.
+Вернее, чувствовал. У него же нет глаз. Только перья. Но я знал: он видит.
+
+94. Зачем Архиву страж? Может, он проверяет. Может, пугает. А может, архивариус —
+это то, чем мы все станем. Если не остановимся.
+
+95. От архивариуса пахнет старыми книгами и чем-то ещё. Сладким. Как от цветов на
+могиле. Я не подходил близко. Но запах остался со мной на весь день.
+
+96. Говорят, если долго смотреть на архивариуса, он начинает казаться красивым. Я
+не проверял. И вам не советую.
+
+97. Говорят, где-то в Архиве есть комната, где время идёт назад. Я не был там. Но я
+видел старика, который утверждал, что был. Он говорил: &quot;Я видел, как строили первый
+ярус&quot;. Он был сумасшедшим. Но глаза у него были ясные.
+98. Говорят, Архив скучает. Когда ему одиноко, он создаёт новые книги. Пустые.
+Просто чтобы кто-то пришёл и прочитал. Я видел такую. Она была тёплой.
+
+99. Говорят, в Архиве есть дверь, которая ведёт наружу. Не в Мнемополис — в другой
+мир. Тот, кто найдёт её, сможет уйти навсегда. Но никто не ищет. Все слишком заняты
+войной.
+
+100. Говорят, Архив ждёт. Не записок, не знаний, не преемника. Он ждёт кого-то
+конкретного. Кого? Я не знаю. Может, тебя. Может, меня. Может, того, кто ещё не
+родился. Но я чувствую: ожидание скоро кончится.
+</pre></template><template id="doc-Акт 2 v1.1.pdf"><h3>Акт 2 v1.1.pdf</h3><pre class="document-text">Акт 2 — Фракции
+Игроки делятся на три фракции в зависимости от отношения к Архиву. У всех трёх
+фракций цель одна: получить доступ к сердцу Архива. Для этого лидерам нужно
+сдавать записки.
+
+
+
+
+Уничтожение Архива
+Лидер: Эйра Описание: бледная кожа, почти белая. Светлые глаза. Волосы
+пепельные, короткие. Одежда: многослойная — серая мантия поверх тёмной рубахи.
+Можно добавить белую взвесь на скулах и руках как текстуру поверх скина.
+
+
+Первый ознакомительный диалог
+&quot;Новый. Из кокона. От тебя пахнет Феридой — старой дурой, которая думала, что
+спасает вас.&quot;
+
+&quot;Я Эйра. Родилась здесь, как и многие.&quot;
+
+&quot;Архив — тюрьма. Он запер нас, он жрёт нас, он не даёт уйти. Я хочу его уничтожить.
+Раз и навсегда.&quot;
+
+&quot;Внизу — сердце Архива. Проход запечатан, он не пускает. Нам нужны воспоминания
+— записки. Чем больше соберём, тем ближе сердце, тем ближе избавление.&quot;
+
+&quot;Я спущусь. Я найду сердце. Я разорву его.&quot;
+
+&quot;Ты со мной?&quot;
+
+
+Выбор
+Вступить: &quot;Хорошо. Можешь положиться на меня, я всегда пойду первой. Неси
+записки. Каждая ослабляет Архив, каждая приближает его к концу.&quot;
+
+Отказаться: &quot;Как знаешь. Я не уговариваю. Передумаешь — я здесь. Мне некуда
+идти.&quot;
+
+
+Реакция на вступление
+&quot;Ты выбрал. Выбора больше не будет.&quot;
+
+&quot;Мы идём к сердцу. Архив проверяет нас — хочет убедиться, что мы помним. Пусть
+проверяет. Когда проход откроется, я войду и закончу то, что не закончила Ферида.&quot;
+
+&quot;Неси записки. Мы не воры. Мы — освободители.&quot;
+Реакция на сдачу записок
+Рандомный вывод одного из вариантов:
+
+&quot;Ещё одна. Архив слабеет. Стены дрожат, когда я прохожу мимо. Раньше такого не
+было.&quot;
+
+&quot;Ты читал, что в этих записках? Чьи-то жизни, чьи-то страхи. Всё это сгорит. Я не
+жалею. А ты?&quot;
+
+&quot;Мы на шаг ближе. Когда Архив падёт, здесь снова станет тихо. По-настоящему тихо.&quot;
+
+&quot;Хорошо. Ещё немного — и проход откроется. Я ждала этого пятьсот лет.&quot;
+
+&quot;Дай сюда. Я сама отнесу. Хочу, чтобы он знал, кто именно его хоронит.&quot;
+
+
+Случайные фразы при взаимодействии
+&quot;Что? Говори быстрее. У меня нет времени на болтовню.&quot;
+
+&quot;Смотри на стены. Они дышат. Мерзко. Я хочу, чтобы они перестали.&quot;
+
+&quot;Ферида думала, что спасает вас. Она просто заперла вас в другой тюрьме.&quot;
+
+&quot;Я не видела неба, но мать рассказывала. Она видела. До того как нас замуровали.&quot;
+
+&quot;Самое страшное в Архиве? Ему всё равно. Ты можешь умирать у него под боком — он
+даже не заметит.&quot;
+
+&quot;Принёс записки — давай. Нет — иди за ними. Чего встал?&quot;
+
+
+
+
+Изучение Архива
+Лидер: Кефал Описание: пожилой, седые волосы, аккуратная борода. Одежда:
+тёмно-синяя мантия с выцветшим золотым шитьём.
+
+
+Первый ознакомительный диалог
+&quot;Ещё один из кокона. Хорошо. Я ждал.&quot;
+
+&quot;Я Кефал. Хранитель. Служил Архиву задолго до войны. Служу и сейчас — но иначе.&quot;
+
+&quot;Архив ранен. Ты, наверное, уже слышал. Очистка сломала его. Он не может открыть
+проходы, не может удерживать знания. Но он жив. Он помнит.&quot;
+&quot;Внизу — Сердце. Там — первые записи, суть Архива. Там — ответ, почему всё пошло
+не так. Проход запечатан. Архив не пускает без воспоминаний. Ему нужно убедиться,
+что мы помним.&quot;
+
+&quot;Я хочу спуститься. Прочитать. Понять. И, может быть, исправить. Не уничтожить —
+исцелить.&quot;
+
+&quot;Ты со мной?&quot;
+
+
+Выбор
+Вступить: &quot;Благодарю. Ты выбрал путь знания. Он не самый быстрый и не самый
+громкий. Но он — верный. Неси записки. Мы соберём достаточно, чтобы открыть
+Сердце. А дальше — увидим.&quot;
+
+Отказаться: &quot;Жаль. Но я понимаю. Если передумаешь — я здесь. Мне спешить
+некуда. Я ждал пятьсот лет. Подожду ещё.&quot;
+
+
+Реакция на вступление
+&quot;Добро пожаловать. Ты теперь часть Изучения.&quot;
+
+&quot;Мы не воюем с Архивом. Мы не хотим его использовать. Мы хотим узнать. Почему он
+ожил? Почему заболел? Почему стёр людей? Ответы — в Сердце.&quot;
+
+&quot;Архив проверяет нас. Он хочет убедиться, что мы помним прошлое. Пусть проверяет.
+Мы помним.&quot;
+
+&quot;Неси записки. Каждая — это шаг вниз. Каждая — это вопрос, который мы зададим
+Сердцу, когда войдём.&quot;
+
+
+Реакция на сдачу записок
+Рандомный вывод одного из вариантов:
+
+&quot;Ещё одно воспоминание. Спасибо. Архив помнит — и мы помним.&quot;
+
+&quot;Я, возможно, знал того, кто это написал. До войны. Теперь уже не узнаю. Почерк
+незнакомый.&quot;
+
+&quot;Хорошо. Каждая записка приближает нас к истине. Истина стоит того, чтобы ждать.&quot;
+
+&quot;Мы на шаг ближе. Сердце ждёт. Я чувствую — оно стало биться чаще.&quot;
+
+&quot;Дай-ка взгляну. Иногда в записках попадаются даты. По датам я восстанавливаю
+хронологию. Медленно, но верно.&quot;
+Случайные фразы при взаимодействии
+&quot;Ты смотрел на потолок? Там символы. Они повторяются каждые десять блоков. Я
+считал.&quot;
+
+&quot;Эйра злится. Я понимаю её. Но злость — плохой советчик. Особенно здесь.&quot;
+
+&quot;Ликон хочет власти. Он думает, что сможет управлять Архивом. Боюсь, Архив уже
+управляет им.&quot;
+
+&quot;Ферида была моим другом. Я не успел помочь ей. Теперь помогаю вам.&quot;
+
+&quot;Знание — не оружие и не лекарство. Это просто знание. А что с ним делать —
+решаешь ты.&quot;
+
+&quot;Принёс записки? Давай. Или просто постой. Здесь тихо. Иногда это полезно.&quot;
+
+&quot;Я помню, как Архив пел. До войны. Странно звучит, да? Но это правда. Он пел по
+ночам. Как колыбельную.&quot;
+
+
+
+
+Могущество Архива
+Лидер: Ликон Описание: высокий, худой. Кожа сероватая, с трещинами, из которых
+сочится слабый белый свет — как у Архивариуса, но меньше. Глаза полностью белые,
+без зрачков. Одежда: длинный плащ из лоскутов.
+
+
+Первый ознакомительный диалог
+&quot;Ты пришёл. Я ждал тебя.&quot;
+
+&quot;Я Ликон. Архив говорит со мной — не знаками, не снами. Голосом. Он устал. Он хочет,
+чтобы кто-то продолжил.&quot;
+
+&quot;Внизу — сердце. Проход закрыт. Архив проверяет нас: мы должны принести
+достаточно воспоминаний. Не чтобы вспомнить. Чтобы доказать, что мы готовы
+принять то, что он отдаст.&quot;
+
+&quot;Архив не может больше копить знания. Ему нужен преемник. Тот, кто станет новым
+Архивом. Я стану.&quot;
+
+&quot;Ты со мной?&quot;
+
+
+Выбор
+Вступить: &quot;Хорошо. Ты понимаешь. Архив звал не всех — он звал тех, кто способен
+выбрать. Ты выбрал. Неси записки. Мы откроем сердце, и я войду. А ты будешь рядом,
+когда начнётся новое.&quot;
+Отказаться: &quot;Жаль. Я думал — ты поймёшь. Но я не держу. Передумаешь — я здесь.
+Я всегда здесь.&quot;
+
+
+Реакция на вступление
+&quot;Ты выбрал. Архив отметил тебя. Не бойся — это не больно.&quot;
+
+&quot;Мы идём к сердцу, чтобы принять. Архив отдаст мне всё — знания, память, свою
+волю. Я стану тем, чем он был. Может быть, лучше. Может быть, иначе.&quot;
+
+&quot;Неси записки. Каждая — это доказательство. Доказательство того, что мы достойны.&quot;
+
+
+Реакция на сдачу записок
+Рандомный вывод одного из вариантов:
+
+&quot;Ещё одна. Архив помнит. Скоро я буду помнить вместо него.&quot;
+
+&quot;Ты чувствуешь? Каждая записка связывает нас. Не с Архивом — друг с другом. Мы
+становимся одним целым.&quot;
+
+&quot;Хорошо. Архив доволен. Он говорит о тебе — говорит, что ты почти понял.&quot;
+
+&quot;Мы на шаг ближе. Когда я войду в Сердце, ты всё увидишь. Я покажу тебе.&quot;
+
+&quot;Дай сюда. Я чувствую тепло этих записок. Они живые, пока их держат в руках. Архив
+говорил мне об этом.&quot;
+
+
+Случайные фразы при взаимодействии
+&quot;Тише. Архив говорит. Он рассказывает мне о тебе.&quot;
+
+&quot;Кефал думает, что знание можно просто прочитать. Эйра думает, что знание можно
+сжечь. Они оба ошибаются. Знание можно только нести.&quot;
+
+&quot;Я не спал пятьсот лет. Архив не даёт мне спать. Он говорит — успеешь отдохнуть
+потом.&quot;
+
+&quot;Ты видел Архивариуса? Он был первым. Неудачная попытка. Я буду удачной.&quot;
+
+&quot;Знание — это бремя. Архив устал нести его один. Я помогу.&quot;
+
+&quot;Принёс записки? Давай. Или постой. Послушай. Слышишь? Это сердце. Оно ждёт.&quot;
+Печати — особая механика второго акта
+Печати — это рубежи. После получения всеми фракциями суммарно N записок, в чат
+для всех выводится фраза и открывается возможность поучаствовать в коллективном
+боссфайте. Фракция, нанёсшая больше урона боссу, получает дополнительные
+записки и награды.
+
+Сообщения при открытии боссфайта:
+
+&quot;Архив уже отдал много... Первая печать пала.&quot;
+
+&quot;Архив утомлён, но доволен. Вторая печать разрушена.&quot;
+
+&quot;Архив сияет от счастья. Третьей печати больше нет, вы близко...&quot;
+
+
+
+
+Первая печать — Склеп
+Страж первой печати. Пока он жив, проходы на нижние ярусы Архива закрыты. Чтобы
+открыть доступ к стражу, фракции должны суммарно сдать N записок. Бой общий для
+всего сервера. Все три фракции сражаются одновременно. Бонус распределяется по
+проценту нанесённого урона.
+
+Внешний вид: груда книг, сросшаяся в подобие человеческой фигуры. Высота —
+примерно 4 блока. Ног нет — нижняя часть переходит в ворох страниц и обломков.
+Головы нет — вместо неё книга, страницы которой медленно переворачиваются.
+
+Атаки:
+
+   -​    Удар рукой. Медленный замах, сильный урон по одиночной цели.
+   -​    Призыв обломков. Раз в 20 секунд Склеп замирает, страницы на &quot;голове&quot;
+         переворачиваются быстрее, и из груд костей на арене поднимаются 3–4
+         скелета. Мобы слабые, но отвлекают.
+   -​    Шелест. Раз в 30 секунд Склеп встряхивает книгой-головой, и по арене
+         проходит волна урона.
+   -​    Книжный удар. Рука вытягивается на 6 блоков вперёд и притягивает
+         ближайшего игрока к Склепу, после чего следует удар костяной рукой. Уворот от
+         притягивания возможен.
+
+Реплики во время боя:
+
+При призыве обломков: Страницы на голове Склепа переворачиваются быстрее.
+Среди шелеста проступают слова: &quot;...я хранил их... я помнил их имена... теперь
+только кости...&quot;
+При использовании &quot;Шелеста&quot;: Склеп встряхивает книгой-головой. Волна звука
+накрывает арену. В ней можно разобрать: &quot;Это знание не ваше. Вы не понимаете,
+что читаете&quot;.
+
+При 30% здоровья: Страницы начинают выпадать из книги-головы. Склеп
+замирает: &quot;Я был каталогом третьего яруса. Раздел истории. Стелаж четыре. Я
+помнил всех...&quot;
+
+При убийстве: Склеп рассыпается. Кости крошатся в пыль. Страницы
+разлетаются и опадают. По всему Архиву костяные наросты трескаются и
+оседают серым пеплом. Проходы на нижние ярусы открыты. Первая печать снята.
+
+Реакции лидеров:
+
+Эйра: &quot;Первая печать пала. Видишь? Они ломаются. Неси ещё записки. Я хочу
+увидеть, как рухнет вторая.&quot;
+
+Кефал: &quot;Склеп был каталогом. Он помнил структуру — что где лежит. Теперь Архив не
+знает собственных залов. Мы должны запомнить вместо него.&quot;
+
+Ликон: &quot;Архив говорит — один страж пал. Он спрашивает, больно ли ему. Я ответил:
+нет. Он не поверил.&quot;
+
+
+
+
+Вторая печать — Эхо
+Страж второй печати. Чтобы открыть доступ, фракции должны суммарно сдать N
+записок после снятия первой печати. Бой общий. Бонус — по проценту урона.
+
+Внешний вид: полупрозрачная фигура, мерцающая, как отражение в воде. Рост — как
+у игрока. Внешность меняется: Эхо ненадолго принимает облик тех, кто находится на
+арене.
+
+Атаки:
+
+   -​    Отражённый удар. Эхо копирует последнюю атаку, применённую против него, и
+         возвращает её тому же игроку с 70% урона. Если атака была огненной —
+         отражение огненное. Если игрок бил в ближнем бою — Эхо бьёт в ответ. Если
+         стрелял — Эхо выпускает такую же стрелу.
+   -​    Рябь. Раз в 25 секунд Эхо замирает и пускает по полу волну ряби. Все игроки в
+         радиусе 15 блоков получают урон.
+   -​    Захват отражения. Раз в 40 секунд Эхо выбирает случайного игрока и на 5
+         секунд создаёт его двойника, который атакует ближайших игроков. Двойник
+         исчезает после получения любого урона или по истечении времени. Сам Эхо в
+         этот момент не атакует.
+
+Реплики во время боя:
+При первом получении урона: Эхо замирает. Его тело идёт рябью, и вы слышите
+собственный голос, искажённый, но узнаваемый: &quot;...ты бьёшь... а я отвечаю... разве
+не этого ты хотел?..&quot;
+
+При использовании &quot;Ряби&quot;: Эхо касается пола. По арене расходится круг. Откуда-то
+из глубины доносится: &quot;...каждый удар оставляет след... каждый след — это я...&quot;
+
+При 25% здоровья: Эхо теряет форму, распадаясь на отдельные отражения. Они
+движутся не в такт. Голос звучит из всех одновременно: &quot;...я не умру... я отражусь...
+в тебе... в нём... в каждом...&quot;
+
+При убийстве: Эхо замирает. Полупрозрачное тело идёт трещинами, как разбитое
+зеркало. Осколки падают и исчезают, не долетев до пола. Коридоры вглубь Архива
+распрямляются. Отражения в стенах теперь совпадают с движениями.
+
+Реакции лидеров:
+
+Эйра: &quot;Второй. Ты чувствуешь? Архив слабеет. Ещё один — и мы у сердца. Только не
+вздумай останавливаться.&quot;
+
+Кефал: &quot;Эхо было предупреждением. Мы смотрим в Архив — и Архив смотрит в нас.
+Всё, что мы делаем, отражается. Буквально.&quot;
+
+Ликон: &quot;Архив говорит — Эхо было его сном. Теперь он проснулся. Он спрашивает,
+страшно ли мне. Я ответил: да. Это правильный ответ.&quot;
+
+
+
+
+Третья печать — Шёпот
+Внешний вид: облако белых частиц, не имеющее постоянной формы. В центре
+облака — тёмное ядро, похожее на закрытый глаз.
+
+Атаки:
+
+   -​    Шепчущий хор. Раз в 15 секунд частицы Шёпота резко сжимаются к ядру и
+         испускают крик. Все игроки в радиусе 15 блоков получают урон. Кроме того, на
+         10 секунд они получают дебафф &quot;Голоса&quot;: на экране каждого затронутого игрока
+         появляется полупрозрачная строка со случайной фразой из числа уже сданных
+         фракциями записок. Текст виден только самому игроку, он не засоряет общий
+         чат, не мешает коммуникации и пропадает по истечении дебаффа. Механика
+         служит напоминанием о том, что игроки уже собрали, и усиливает атмосферу.
+   -​    Мираж. Раз в 25 секунд Шёпот создаёт копию случайного игрока. Копия
+         выглядит как игрок, имеет такой же ник, движется и атакует. Копия исчезает
+         через 8 секунд или при получении 30% урона.
+   -​    Раскрытие. При 10% здоровья ядро Шёпота (тёмный глаз в центре)
+         открывается. На 3 секунды повисает тишина — а затем частицы разлетаются
+      ударной волной. Все игроки получают 30% урона от текущего здоровья и
+      отбрасываются к стенам. После этого Шёпот остаётся без защиты.
+
+Реплики во время боя:
+
+При начале боя: Частицы сгущаются. Со всех сторон доносится: &quot;...вы пришли... мы
+ждали... мы ждали пятьсот лет... мы знали, что вы придёте...&quot;
+
+При использовании &quot;Шепчущего хора&quot;: Крик. А сразу за ним — тишина и далёкий
+шёпот: &quot;...ты слышишь их?.. это голоса тех, кого вы не спасли... они всё ещё
+здесь...&quot;
+
+При создании Миража: Воздух мерцает, и рядом возникает фигура. Шёпот
+произносит: &quot;...вот ты... а вот ты... кто из вас настоящий?.. мы не знаем... мы
+никогда не знали...&quot;
+
+При 10% здоровья (Раскрытие): Ядро открывается. Глаз смотрит прямо на вас.
+Впервые шёпот становится разборчивым и громким: &quot;...ты хочешь знать, что мы
+прятали?.. мы прятали правду... Архив не стирал людей... Архив стирал их память...
+а без памяти человек исчезает сам...&quot;
+
+При убийстве: Ядро трескается. Частицы в комнате оседают — медленно, как
+пепел. Последнее, что слышно — далёкий шёпот: &quot;...теперь вы знаете... что
+будете делать?..&quot; Стены перестают светиться. Наступает тишина.
+
+Реакции лидеров:
+
+Эйра: &quot;Все три печати пали. Сердце почти открыто. Ты слышал, что сказал Шёпот?
+Архив стирал память. Не людей. Тем хуже для него. Я ждала этого с рождения. Ты со
+мной до конца?&quot;
+
+Кефал: &quot;Мы стоим у порога. То, что сказал Шёпот... если это правда, то тех, кого стёр
+Архив, можно вернуть. Память где-то хранится. Я должен найти её. Я готов. А ты?&quot;
+
+Ликон: &quot;Архив молчит. Впервые за пятьсот лет он молчит. Шёпот сказал правду —
+Архив стирал память. Он стыдится этого. Поэтому ему нужен я. Тот, кто примет этот
+стыд и пойдёт дальше. Идём.&quot;
+</pre></template><template id="doc-МлТСерияОдин.pdf"><h3>МлТСерияОдин.pdf</h3><pre class="document-text">Монумент ложного Творца(МлТ)​
+Серия первая(называть их будет Неко)​
+​
+Сцена вторая(первая сделана немного по другому и будет описана более подробно)
+
+Место действия: квартира Николаса, Брукен-Хилл, Австралия
+Участники: Николас, Арчи(косвенно)
+
+*Николас просыпается в обнимку с телефоном на старом матрасе​
+​
+Тесная комнатушка. На полу — матрас. На ящике из-под техники вместо тумбочки —
+лампочка без абажура, пачка дешевой еды, фильтр для противогаза. На стене —
+старая карта Австралии с маршрутами и пометками.
+
+
+
+— Удивительно спокойная ночь. Но могла быть ещё спокойнее, ели б я думал
+быстрее. (Ваш голос звучит хрипловато, ведь Вы только-только проснулись)
+
+   ●​ Встаёт с матраса и подходит к шкафу.
+
+— Гардероб не слишком большой. Я бы даже сказал никакой.
+
+*Одевается, подходит к тумбе. Берёт патроны
+
+— Пункт А. Дипломатия уже давно тут не в ходу. Без этих железных погремушек я буду
+плавать в ближайшей канаве уже через три минуты.
+   ●​ Берёт с тумбы фильтр*
+
+— Пункт Б. Главное не забывать его вовремя вставить.
+
+   ●​ Открывает тумбу и достаёт пистолет*
+В руке он лежит как родной, слегка пахнет чем-то горелым.
+
+— Судя по последним новостям, он мне пригодиться.
+*Молчание
+— Мы могли бы не усложнять, и закончить это прямо здесь и сейчас.
+*Молчание*
+— Нет, я не могу так подвести Арчи
+
+   ●​ В окно залетает ворона и выхватывает у Николаса блестящий патрон.
+      Появляется подсказка по стрельбе*
+
+— Да что б ты им подавилась! Пожуй стали, тварь крылатая.
+
+   ●​ Ворона начнёт кружить над окнами, и игроку предстоит попасть по ней из
+      пистолета
+— Арчи не обрадуется такому расходу металла(Ваш голос немного дрожит)
+
+   ●​ Выходит из дома*. Звучит взрыв
+
+— Твою... Это в моей стороне.
+
+*Подбирает патрон с трупа вороны и набирает сообщение Арчи*
+
+— утра. я рассовал все вещи по карманам но походу в наши планы вклиниться пара
+побочных пунктов.
+— Утра. Что там, неужели местные бандюги подняли тебя раньше времени?
+— какой то взрыв. возможно это старая станция но тогда звук был бы громче.
+— Разведай обстановку, иди вперёд. Я отправлю сейчас отправлю тебе пару
+сюрпризов, так что не удивляйся зуду в наростах​
+
+​
+Сцена третья
+(Баррикады)
+Улица. Самодельные баррикады из машин и мусорных баков. За ними — трое
+полицейских. Один стоит на посту, двое перевязывают раны. На земле следы крови,
+гильзы.
+
+Николас (про себя)
+— Перед ними лучше спрятать оружие и не привлекать внимания
+
+   ●​ Один из группы всё же обращает внимание на игрока*
+
+— Гражданин-рабочий! Будьте добры пригнуться и подойти сюда.
+
+(Про себя)— Чёрт, бежать от них не вариант, не хотелось бы получить пулю в спину
+
+Первый полицейский:
+— Я бы не советовал Вам двигаться далее. Бунтующие стремительно движутся
+вперёд, некоторые из них совершенно не предсказуемы.
+Второй полицейский, лежащий на асфальте:
+— Позвольте сделать поправку: они совершенно непредсказуемы. На контакт идут
+единицы, при виде синей формы стреляют на поражение. Даже в своих.
+​
+*Вам в голову приходит идея
+— А Вы не пытались выслать на переговоры своего человека без формы?
+​
+Полицейский:
+— Были предложения, но начальство не переспорить, говорят, мол &quot;патроны и так
+второй десяток лет на складах ржавеют, перестреляем всех&quot;.
+Он с явным отвращением смотрит на своё оружие
+— Какое расточительство… Так скоро на улицах людей не останется. Мне надо идти
+дальше.
+Лежащий полицейский:
+— Да брось ты этот регламент, его что там что дальше никто не защитит.
+(Поворачивается к игроку)
+— Простите за беспокойство. Идите. И удачи вам…
+​
+Сцена четвёртая​
+(Первое убийство)
+​
+Узкий переулок за углом. Тела в гражданской одежде. Много гильз. Стонет один
+раненый. Над ним склонился мужчина в похожей одежде, роется в карманах. За
+спиной у него рюкзак.
+
+Вы инстинктивно хватаетесь за рукоять пистолета. Ваш шаг привлекает внимание
+человека.​
+
+— Стой! Кто... А, не синий. Ладно.
+Он опускает ствол, но убирать его явно не планирует.
+— Уходи. Здесь нечего тебе брать.
+
+
+— Я прохожу. Не мешай мне — я не трону тебя.
+— Ух ты какой милосердный. О синих до тебя такого не скажешь. Продырявили моих
+парней и забрали всё добро. Нам бы оно ещё конечно сильно пригодилось…
+Его что-то заинтересовало в Ваших вещах. Компромисса можно не искать.
+— Хотя, я передумал. Твой пистолет мне больше нравиться.
+
+   ●​ Завязывается первая схватка
+
+Бандит падает замертво. По спине пробегает неприятный холодок.
+
+— Всё... как по инструкции. Дыхание ровное... прицел... выстрел.​
+Вы смотрите на свои руки.​
+— Почему я трясусь? Я же... готовился. Я... отвратителен. Он даже не крикнул. Только
+этот... хрип.
+
+Вы подходите к телу и прикасаетесь к нему.
+
+— Ещё тёплое…
+
+   ●​ Игрок осматривает рюкзак и вытряхивает патроны из пистолета нападавшего.
+
+— Не мог бы ты... просто отдать мне это? Без всего этого?
+Сцена пятая​
+(Зуд)
+
+Внезапно Вы чувствуете сильный зуд в наростах на голове. Безусловно, он был и
+раньше, но такая сила для него нетипична.
+
+*На телефон приходит уведомление
+
+Арчи:
+
+— Наконец разобрался со всем. У тебя должно появится новое приложение
+
+— и что ты мне отправил на этот раз?
+
+— Помнишь микро-носители с оченьдлиннойаббревиатурой в названии, которые
+СВЕТ раскидывал по городам?
+
+— помню, находил парочку. занятное чтиво.
+
+— Да, там более ста тысяч статей. Только поиск был невероятно неудобным, это ты
+тоже помнишь. Я сделал скрипт, который раскроет возможности твоего устройства
+на максимум, и ты сможешь найти больше.
+
+— у меня конечно больше нет дел кроме как читать сейчас эти полотна текста
+
+— Расслабься, почитаешь в самолёте.
+
+— ладно спасибо, опробую
+
+
+
+Сцена шестая
+
+(Завал)
+
+   ●​ Игрок приближается к точке взрыва.
+
+Перед нами в ряд стоят дома, проход между ними завален обломками. Вокруг
+валяются куски бетона, можно сделать частицы пыли. Рядом с обломками ходят
+три человека, недалеко от них лежит ящик с динамитом.
+
+Земля усеяна каменными обломками и покрыта слоем пыли
+
+
+
+[Про себя] — Вот это место и вот эти люди. Не буду с ними церемониться.
+   ●​ Игрок сражается с подрывниками, затем подходит к ящику с тротилом
+
+Ящик сделан невероятно грубо, но надёжно. На задней стенке можно различить флаг
+какой то неизвестной Вам страны и надпись на столь же непонятном Вам языке. Но
+одно Вы понимаете: внутри тротил. Хорошо знакомая вещь.
+
+Ящик пуст лишь наполовину, и Вам в голову сразу приходит идея.
+
+— Надо набрать по этому поводу Арчи.
+
+Уже в телефоне:
+
+— не прошло и дня. перед самым выходом я услышал взрыв но не придал ему
+значения. сейчас я ровно рядом с этим местом.
+
+Что-то побуждает Вас соврать
+
+Ящик на три четверти пуст. Думаю, рвануть оставшееся и расчистить путь.
+
+— Твою мать, что ты сейчас написал¡¿ Какой
+
+Какой вообще тротил, ты хоть раз в жизни его в руках держал?
+
+— ну было дело.
+
+— Когда? Ты же краску там гонял или порошок какой то
+
+— ни одного попадания.
+
+— Вообще всё равно. Просто обойди, иначе в ящик с тротилом сыграешь уже ты.
+
+— арчи тут идти километр в обход. это время. а его у нас нет.
+
+— Ладно, я ничего всё равно не вижу.
+
+А зачем я то тебе?
+
+— да так. может знаешь чего побольше меня
+
+— Найди фитиль подлиннее и зажигалку подешевле, будет тебе фейерверк
+
+— ничего нового, но спасибо
+
+Конец связи
+
+— Тут был магазин. Можно сделать преждевременный крюк и найти всё
+необходимое.
+   ●​ Игрок получает первое задание: добраться до магазина и найти фитиль с
+      зажигалкой
+
+Сцена седьмая
+
+(Магазин)
+
+
+
+   ●​ Игрок сворачивает в сторону от завала и подходит к разорённому магазину
+
+Магазин выглядит только-только вынесенным, но никак не давно заброшенным.
+Внутренняя площадь должны быть квадратов сто, не больше. Это не супермаркет.
+Внутри нужно сделать простейшие стеллажи, кассу и задний угол с бытовыми
+предметами. По залу будут бегать здоровые крысы.
+
+Вам в нос мерзкий запах, который Вы никогда не чувствовали.
+
+Хоть магазин перестал функционировать, по виду, совсем недавно, крысы прочно
+обосновались здесь и пируют на остатках товаров. Поторопитесь
+
+— Ну что ж, самое время этим тварям поесть кое-чего более твёрдого.
+
+   ●​ Игрок расправляется с крысами. Затем, необходимо оббежать весь магазин,
+      найти необходимые вещи.
+
+
+
+Сцена восьмая​
+(Статья)
+
+   ●​   Пройдя ещё какое то расстояние, игрок сможет найти вторую статью. .
+
+В памяти мелькают разговоры с Арчи. Он рассказывал Вам о множестве мест, где
+даже сам оставлял микро-носители со статьями. В прошлый раз на этом же самом
+месте удача Вам не улыбнулась.
+
+— Может, стоит попытаться ещё раз? Солнце пока высоко.
+
+Пройдя в конец переулка перед игроком появится надпись “прошло восемь часов” и
+его тепнет к предпоследней сцене.
+
+
+
+Сцена девять
+
+(Лагерь)
+
+— Путь был более спокойным чем я ожидал. Но всегда приходиться останавливаться.
+Там виден дымок. Надеюсь, эти люди будут менее агрессивно настроены.
+Перед нами полуразрушенный каменный сарай, склад, вообще не важно. В центре
+горит костёр, валяются рюкзаки. Вокруг сидит несколько рабочих(вообще всё равно
+сколько)
+
+   ●​ Герой подходит к группе. Люди вокруг костра вскакивают и встают в
+      оборонительную стойку, обнажая оружие.
+
+Их сильно больше Вас, но на разбойников они явно не похожи. Судя по тому, как люди
+по бокам жмуться к соседям, боевого опыта у них немного, да и агрессии на их лицах не
+читается.
+
+— (Про себя: Они явно не ждали пополнения. Но стоит попробовать договориться, но
+надо подбирать слова)
+
+Вы поднимаете правую руку вверх, показывая что хотите мира, а затем четко по слогам
+произносите.
+
+— Товарищи. Опустите оружие. Я всего лишь ищу ночлега, нам незачем бросаться
+друг на друга.
+
+   ●​ Люди опускают оружие, и один из них начинает говорить.
+
+— Ты тоже... из беженцев? С центра? —
+
+— Можно и так сказать, иду своим маршрутом.
+
+— Хорошо. Садись. Припасов не дадим, у самих только батончики.
+
+— Мне не нужна еда, только безопасное место поспать.
+
+   ●​ Человек напротив немного задумывается, а затем заканчивает мысль
+
+— Мы выставляем часовых ночью. Тебя мы от этой обязанности освобождаем, — он
+немного осёкся на этом слове — Сам понимаешь.
+
+Тут пустое место, если вдруг решим добавить пару разговор. Пока решим, что просто
+проигралась катсцена с ужином и герой отправился спать
+
+Вы устали. Постель ещё хуже, чем дома. Но вы чудовищно устали, подойдёт даже такой
+отдых.
+
+
+
+Сцена десять (Сон)
+
+   ●​ Игрока плавно переносит в чёрноё пространство. Вещей нет. Вдалеке
+      виднеется сияющий вход. Пройдя к нему стена сзади закрывается. Мы
+      находимся в маленьком помещении, заставленном папками,
+      листами,флешками, дисками. От всего исходят частицы. В инвентаре тут же
+      появляется несколько листов, ручка. Игрок покидает помещение и попадает в
+      цех.
+
+Большое помещение с высокими потолками. В ряд стоят несколько огромных
+глубоких чанов, к ним ведут лесенки. От всего опять же исходят частицы. Можно
+увидеть чёрные отверстия в полу. Рядом стоят несколько рабочих.
+
+— Почему работа стоит?
+
+— Начальник, как говорят, отозвали нескольких специалистов. Никто не может
+запустить оборудование.
+
+      Игрока телепортирует к стене и в инвентаре появляется несколько шестерёнок
+      из Криэйта. Небольшая головоломка, где необходимо расставить детали в
+      правильном порядке. После прохождения игрока вновь телепортирует к
+      рабочим.
+
+— Где остальные рабочие цеха?
+
+— Вас должно быть плохо извещают, но руководство решило перевезти оставшихся
+людей на другое производство, а цех закрыть.
+
+— Что значит оставшихся? Куда делись люди? И почему я узнаю об этом сейчас?
+
+— Директор сегодня ввалился в цех вместе со мной и приказал передать эту
+информацию Вам. Без документов. Он явно куда то торопился…
+
+— А где же люди?
+
+— Коварно бежали, перешли на сторону бунтующих или были уби…
+
+   ●​ Игрок падает вниз и опять попадает в тёмное пространство. Опять вдалеке
+      виден свет, но при подходе опять звучит взрыв, пол под ногами ломается как
+      стекло и на экране появляется надпись “продолжение следует”
+​
+</pre></template><template id="doc-Цитаты и Парадоксы.pdf"><h3>Цитаты и Парадоксы.pdf</h3><pre class="document-text">Как это работает
+Цитаты — одноразовые записки. Игрок находит такую в сундуке, использует — и все
+игроки поблизости (в радиусе X блоков) получают положительный эффект. В чат
+выводится сообщение “Архив шепчет” + рандомная строчка из списка ниже . Один раз
+прочитал — и она исчезает. Аналог зелий, но внутри Архива.
+
+Парадоксы — то же самое, но с отрицательным эффектом.
+Игрок активирует — и враги или всё вокруг получают дебафф. В чат тоже выводится
+фраза.
+P.S. Выкрики были заменены на парадоксы, ибо они лучше ложились на лор.
+
+Эффекты для цитат
+Краткий покой — + к скорости восстановления здоровья.
+Твёрдая рука — + к урону.
+Лёгкий шаг — + к скорости передвижения.
+Второе дыхание — мгновенное восстановление здоровья.
+Слово Архива — + ко всем характеристикам.
+Нерушимость — иммунитет к урону.
+Покров тишины — невидимость для мобов.
+
+Эффекты для выкриков
+Шёпот страха — мобы в радиусе 10 блоков получают - к скорости атаки.
+Тяжкий груз — мобы замедляются.
+Сбитый ритм — мобы теряют агрессивность.
+Трещина — мобы получают + к входящему урону.
+Крик Архива — все мобы в радиусе 15 блоков получают n% текущего здоровья как
+урон.
+Гниль — мобы теряют 3% здоровья в секунду на 10 сек.
+Разлом — по площади проходит волна, отбрасывающая мобов и наносящая урон.
+
+Цитаты — 45 штук
+
+1. «Познай самого себя.»
+2. «Ничего сверх меры.»
+3. «Дорогу осилит идущий.»
+4. «Истина в вине.»
+5. «Пока дышу — надеюсь.»
+6. «Знание — сила.»
+7. «Судьба помогает смелым.»
+8. «Сказано — сделано.»
+9. «Молчание — золото.»
+10. «Человек человеку волк.»
+11. «Спеши медленно.»
+12. «Хочешь мира — готовься к войне.»
+13. «Что не убивает, делает сильнее.»
+14. «Лучше поздно, чем никогда.»
+15. «О мёртвых либо хорошо, либо ничего.»
+16. «Деньги не пахнут.»
+17. «Бумага всё стерпит.»
+18. «Не всё то золото, что блестит.»
+19. «В здоровом теле здоровый дух.»
+20. «Клин клином вышибают.»
+21. «Через тернии к звёздам.»
+22. «Я мыслю — значит, существую.»
+23. «Время лечит.»
+24. «Свобода есть осознанная необходимость.»
+25. «Никто не обнимет необъятного.»
+26. «Смотри в корень.»
+27. «Лови момент.»
+28. «Рука руку моет.»
+29. «Всё своё ношу с собой.»
+30. «Надежда умирает последней.»
+31. «Истина рождается в споре.» — Сократ
+32. «Учиться — всё равно что плыть против течения.»
+33. «Не делай другому того, чего не желаешь себе.»
+34. «Тот, кто двигает горы, начинает с маленьких камней.»
+36. «Знающий не говорит, говорящий не знает.»
+38. «Будь внимателен к своим мыслям — они начало поступков.»
+39. «Кто знает меру, у того не будет неудачи.»
+40. «Побеждающий других силён, побеждающий себя — могущественен.»
+41. «Счастье — это когда тебя понимают.»
+42. «Глаза боятся, а руки делают.»
+43. «Под лежачий камень вода не течёт.»
+44. «Терпение и труд всё перетрут.»
+45. «Слово не воробей.»
+
+Парадоксы
+
+1. «Всё предрешено. Ты свободен.»
+2. «Тишина громче крика. Крик глубже тишины.»
+3. «Архив помнит всё. Архив ничего не помнит.»
+4. «Ты здесь. Тебя нет.»
+5. «Знание — свет. Свет слепит.»
+6. «Я говорю правду. Я лгу.»
+7. «Движение невозможно. Ты уже пришёл.»
+8. «Времени нет. Ты опоздал.»
+9. «Стена цела. Стена треснула.»
+10. «Я жив. Я умер вчера.»
+11. «Здесь темно. Здесь слишком ярко.»
+12. «Ты помнишь. Ты забыл.»
+13. «Всё конечно. Ничто не кончается.»
+14. «Ты один. Ты окружён.»
+15. «Слово — сила. Слово — пустота.»
+16. «Архив говорит. Архив молчит.»
+17. «Ты поднимаешься. Ты падаешь.»
+18. «Всё имеет цену. Ничто не стоит ничего.»
+19. «Дверь открыта. Дверь заперта.»
+20. «Ты читаешь. Тебя читают.»
+21. «Прошлое неизменно. Прошлое меняется.»
+22. «Ты видишь. Ты слеп.»
+23. «Война окончена. Война продолжается.»
+24. «Мир восстановлен. Мир разрушен.»
+25. «Ты вечен. Ты уже мёртв.»
+26. «Всё сказано. Ничего не сказано.»
+27. «Ты дышишь. Воздуха нет.»
+28. «Архив исцелился. Архив умирает.»
+29. «Ты близко. Ты бесконечно далеко.»
+30. «Память точна. Память лжёт.»
+31. «Свет сочится сквозь трещины. Трещины не существует.»
+32. «Ты выбираешь. Выбора нет.»
+33. «Истина одна. Истин множество.»
+34. «Ты тяжёл. Ты невесом.»
+35. «Начало здесь. Конца нет. Начала нет. Конец здесь.»
+36. «Ты слышишь голос. Вокруг тишина.»
+37. «Всё реально. Это сон.»
+38. «Ты движешься. Ты застыл.»
+39. «Архив хранит. Архив отдаёт. Архив пуст. Архив полон.»
+40. «Ты цел. Ты разбит.»
+41. «Всё просто. Всё непостижимо.»
+42. «Ты горишь. Ты замёрз.»
+43. «Дорога прямая. Дорога в круг.»
+44. «Ты первый. Ты последний. Ты единственный. Ты повторяешься.»
+45. «Стены поют. Стены немы.»
+46. «Ты знаешь ответ. Вопроса нет.»
+47. «Ты силён. Ты ничто.»
+48. «Смерти нет. Ты умрёшь.»
+49. «Всё будет хорошо. Ничего не будет.»
+50. «Мы — есть. Нас нет.»
+</pre></template><template id="doc-road"><h3>Вступительное NoEcho, «Дорога»</h3><pre class="document-text">## Предисловие
+
+Я буду помечать переход от катсцен (когда важно показать действия самого Ло) к виду от первого лица и передаче управления игроку. Весь геймплей тут — следование за NPC. Некоторые анимации моменты, теоретически сложные в реализации, будут помечены с предложением замены.
+
+Порядок сцен (этот фрагмент требует чёткого введения и использования квартиры. Мне неизвестна карта, поэтому явного взаимодействия с окружением и комментариев героев об этом не предусмотрено): 
+
+Сборы  (начало дня, демонстрация настроения героев) -&gt; Дорога (основная часть) -&gt; Расставание у школы (Конец фрагмента)
+
+*P.S. Я решил задействовать типичные именно для Великобритании, а не Америки имена.*
+
+**УТРО. ВАННАЯ. 7:12**
+
+*Катсцена*
+
+Из крана льётся вода. Лололошка стоит у раковины, камера за плечами, чистит зубы. Стоит прямо, смотрит в зеркало — на себя, но как будто сквозь, глаза расфокусированны. 
+Камера меняет положение и распологается боком к Ло, позволяя видеть дверь. Из коридора доносится быстрый стук.
+
+САША (из-за двери): Ло! Ты там уснул?!
+Лололошка вздрагивает, сплёвывает, открывает кран сильнее.
+ЛОЛОЛОШКА: Иду!
+САША: Ты уже десять минут «идёшь».
+
+Он вытирает лицо полотенцем, выходит. Камера крупным планом показывает коридор и Сашу с Ло, стоящими друг на против друга.
+ Саша стоит в куртке, рюкзак на одном плече. Она смотрит на его мокрые волосы, расстёгнутую рубашку.
+
+САША: Ты опять не выспался.
+ЛОЛОЛОШКА: Нет, я нормально спал.
+САША: Ага. Поэтому у тебя глаза, как у той рыбы с картинки.
+ЛОЛОЛОШКА (усмехается, застёгивает рубашку): У какой рыбы?
+САША: Которая эта, ну как её. Груша, пила…
+ЛОЛОЛОШКА: Капля? 
+САША: Сам ты капля!
+Саша запинается, чешет голову. 
+САША: Да, точно, капля! Я же это и имела ввиду.
+ЛОЛОЛОШКА: Ты сказала про «грушу». 
+САША: Бла-бла-бла, может и рыба капля с рыбой грушей похожи?
+
+Она разворачивается, идёт к выходу. Он за ней, на ходу натягивая куртку. Управление переходит игроку. 
+
+**УЛИЦА. 7:28**
+
+Утро серое, но не холодное. Лужи после дождя. Саша идёт чуть впереди, пинает камешек (было бы хорошо реализовать эту анимацию, но не знаю, возможно ли реализовать должную узнаваемость. Поэтому теоретически можно и без неё). Лололошка — рядом.
+
+САША: Короче, вчера мы с Норой и Мари пошли в тот парк, ну, где колесо обозрения. И знаешь, что мы там увидели?
+ЛОЛОЛОШКА: Колесо обозрения?
+САША (смеётся): Нет, балда. Там пацан один... Ну, короче, он пытался своей девушке в любви признаться. Пиджак надел, цилиндр, туфли, как  этот… И с цветами какими-то. Он на колено становятся, а ветер цветы эти прямо девушке в лицо бросает, всего до одного. 
+ЛОЛОЛОШКА: И что он?
+САША: Стоял. Смотрел. У него лицо было... как у тебя, когда в раковину смотришь.
+ЛОЛОЛОШКА: У меня нормальное лицо, когда я в раковину смотрю.
+САША: Нет. Ты серьёзно. Ты как будто там смысл жизни ищешь.
+Она останавливается у перехода, ждёт зелёный. Лололошка встаёт рядом. 
+САША: А ты как вчера? С Наддом виделся? (В каноне никакие друзья не упоминаются, поэтому почему бы не ввести одного?)
+ЛОЛОЛОШКА: Да. В универе. После пар посидели в столовой немного.
+САША: И-и-и?
+ЛОЛОЛОШКА: Что «и»?
+САША: Ну, что вы делали-то? Просто сидели?
+ЛОЛОЛОШКА (пожимает плечами): Говорили. Про химию. Про сессию.
+САША (фыркает): Скучно…
+ЛОЛОЛОШКА: А что ты хотела? Мы не в парке с цветами.
+САША: Вот именно. Ты вообще куда-то ходишь, кроме универа и дома?
+ЛОЛОЛОШКА: Хожу. Бывает иногда.
+САША: Куда?
+Пауза. Лололошка смотрит в сторону.
+ЛОЛОЛОШКА (не сразу находя, что ответить): В би…блиотеку.
+САША (смеётся): Господи, ты невозможный!
+
+Зелёный, они переходят. Саша чуть отстаёт, поправляет рюкзак.
+
+САША: Слушай. А ты… нормально вообще? Ну, в последнее время.
+ЛОЛОЛОШКА: Нормально.
+САША: Нет, ты врёшь.
+ЛОЛОЛОШКА: Саш.
+САША: Что «Саш»? Я же вижу. Ты в облаках летаешь. Ты мне сказку вчера читал, а сам в стену смотрел.
+ЛОЛОЛОШКА: Я слушал.
+САША: Ты не слушал. Ты сказал «да, енотик», когда я спросила, как звали дракона. А я не спрашивала про дракона. Я спросила, почему ты грустный.
+Пауза. Лололошка молчит.
+САША (тише): Я не маленькая. Можешь не врать.
+ЛОЛОЛОШКА: Я не вру. Просто… есть вещи, которые сложно объяснить.
+САША: Например?
+ЛОЛОЛОШКА: Например, то, что я сам не понимаю.
+
+*Катсцена*
+
+
+Они подходят к школе. Саша останавливается у ворот, поворачивается к нему. Смотрит снизу вверх.
+
+САША: Ты придёшь сегодня?
+ЛОЛОЛОШКА: Приду.
+САША: Обещаешь?
+ЛОЛОЛОШКА: Обещаю.
+САША: И шоколадку?
+ЛОЛОЛОШКА (улыбается): И шоколадку.
+Она кивает, разворачивается и бежит ко входу. У самых дверей оборачивается.
+САША: Ло!
+ЛОЛОЛОШКА: Что?
+САША: Ты правда сейчас странный. Но я тебя всё равно люблю! 
+
+Она исчезает за дверью. Лололошка стоит ещё секунду. Потом убирает руки в карманы и идёт в сторону университета. По дороге  достаёт телефон, а затем разочарованно кладёт его обратно.</pre></template><template id="doc-kuraga"><h3>Kuraga Pedia</h3><div class="wiki"><div class="wiki-note">📌 Разработка сезона и мира на данный момент остановлены, но память о них жива. Над информацией работали: Tarelka, ReggiRi, Cent, Sonoko.</div>
+<h2>Основы мироздания</h2>
+<h3>Основные правила</h3>
+<p>Миры, существа, магия, души, боги.</p>
+<h3>Миры</h3>
+<p>Миры появились из осколков "первоначальной энергии". Мир обусловлен тем самым осколком, из которого создан. Условно, чем больше осколок, тем больше мир, чем дольше он существует, тем плотнее.</p>
+<p>Цикл мира заключается в рождении (слабый, неплотный мир), жизни (наполненный и живой мир), угасании (переполненный и черствый мир) и смерти (под давлением себя мир "взрывается", давая возможность рождению новых миров).</p>
+<p>Мана/энергия – это основная составляющая мира, каждый мир пропитан ею. Поэтому чем дольше раса существует в определенном мире, тем больше она к нему привязана, соответственно приспособлена (лучше управляется маной).</p>
+<p>В какой-то момент миры перемешались (надо продумать и обыграть), поэтому можно встретить не вписывающиеся расы в тот или иной мир.</p>
+<p>В молодых мирах плотность мала, и из-за этого жители могут свободно перемещаться между мирами. (Надо доработать это, и додумать способ работы порталов).</p>
+<h3>Души</h3>
+<p>Изначально, как только Боги появились на этот свет, они все никак не могли создать другую разумную жизнь. Каждый сосуд, что они создавали, был мертвым и пустым. И тогда Ардаласу пришла идея дать часть своей божественной силы человеку. После того, как он наделил тело своей силой, энергия преобразовалась в духовную сущность. Боги решили назвать этих сущностей душами. Несмотря на то, что тело наконец ожило, тут же появились новые проблемы. Сущности были эмоционально беспомощны. Они ничего не чувствовали, ни к чему не стремились, просто существовали. Тогда Марселин подарила душам часть своей силы, и те почувствовали вечную тоску. В итоге каждый из Богов дал свою божественную часть человеку и у них наконец-то получилась идеальная форма жизни. Только вот Боги были бессмертны, а все души со временем теряли рассудок. Спустя некоторые столетия все пришло к началу. Азраель вынул душу из тела, и та потеряла все свои воспоминания о том, кем была ранее.</p>
+<p>Вот именно тогда Боги установили закон равновесия, что каждая душа со временем гаснет, а смерть полностью ее обновляет. Когда сущность покидает тело, она тут же отправляется на поиски нового, чтобы снова ожить.</p>
+<p>Изначально, Боги сами создавали души. Каждая получалась уникальной, но их создание было неимоверно мучительным. Тогда, Боги создали единый "шаблон" – идеальную душу. И создали миры-кузни, в которых невиданные существа по этому "шаблону" создают новые души, и жизнь во Вселенной продолжается.</p>
+<p>Иногда Боги все же создают уникальные души.</p>
+<h3>Система маны</h3>
+<p>Каждый мир в основе своей создан из осколка. Каждый осколок источает энергию, делающую мир уникальным. Энергия медленно накапливается в существах с течением жизни, практически никак на них не влияя. Начиная "высасывать" энергию из осколка, существо повышает свою мощь и получает возможность использовать заклинания. Но тогда оно "пропитывается" этой энергией и становится привязано к осколку, а соответственно и к миру. Перемещаясь в другой мир, в существе начинает накапливаться другая энергия. Два типа энергии начинают конфликтовать, вызывая негативные эффекты.</p>
+<h3>Типы существ</h3>
+<ol><li>Существа, пропитанные энергией своего мира. — При появлении в другом мире чужая энергия давит в попытках проникнуть внутрь, вследствие чего существо не выдерживает и погибает. (Чем сильнее они привязаны к изначальному миру, тем быстрее они погибают).</li><li>Существа из молодых миров, не пропитанные энергией до конца. — При появлении в другом мире испытывают дискомфорт (степень зависит от "пропитанности"). — Чем дольше они находятся в мире, тем сильнее "пропитываются" энергией в нем. Обусловлено попытками мира подстроить чужеземца под себя.</li><li>Существа с закольцованным типом энергии. Имеют все и сразу, из-за этого при появлении в каком либо мире уже легко подстраиваются и не имеют каких либо проблем.</li></ol>
+<h2>Сухофрукт (Мир первой арки)</h2>
+<h3>Расы</h3>
+<h4>Высшие эльфы</h4>
+<p>Гуманоиды, отличающиеся от людей более низким ростом, длинными ушами, хрупким телосложением и феминными чертами внешности. — Прибыли в мир вместе с людьми. — Хуже всех приспособлены к болезням, но лучше к магии.</p>
+<h4>Люминары</h4>
+<p>В среднем метр ростом, насекомоподобные с 6 конечностями (включая крылья), окрас зависит от местности обитания. — Первая раса, колонизировавшая этот мир. — Нелюбопытные и пофигисты по отношению к остальным расам. С их короткой жизнью, главное – успеть добиться всего нужного для хорошей жизни потомков (концепт одной расы из книги “спектр”, они живут всего 8 месяцев, хотелось бы внедрить к нам в сюжет).</p>
+<h4>Люди</h4>
+<p>Гуманоиды, стандартное телосложение, стандартный рост. — Одни из последних прибывших в этот мир, доминирующая раса. — Любопытные, жаждущие контроля/власти существа. Все время недовольны тем, что имеют, стремятся к большему, алчны.</p>
+<h4>Низшие эльфы</h4>
+<p>Бледная кожа, несуразно длинные конечности, жёлтые маленькие глаза и заостренные уши (не длинные, а именно заостренные). — Коренные жители этого мира. Достаточно сильны в магии, но пацифисты, из-за чего были легко порабощены людьми.</p>
+<h3>Арваросская Империя (основа)</h3>
+<p>Унитарное государство с около-авторитарным режимом. Существует четыре ступени власти, причем деятельность верхних двух полностью скрывается. Нет практически никакой правовой системы. Капитализм и частная собственность имеют место быть, но законом это все никак не защищено.</p>
+<h4>Четыре ступени власти</h4>
+<ol><li>Император, власть передается по наследству старшему ребенку.</li><li>Тайный Суд. Особый орган, собирающий информацию о деятельности низших уровней власти, назначающий новых чиновников и в некоторых случаях выносящий вердикт по поводу дел (хотя это бывает редко, самосуд — дело распространенное).</li><li>Чиновники, управляющие властью в каком-то узком спектре дел. Делятся на три разряда: Военные (военачальники наступательной и оборонительной армии, а также жандармы). Народные (заведующие сельским хозяйством, добычей и т.д.). Ученые и учителя.</li><li>Обычные рабочие.</li></ol>
+<p>Власть императора передается по наследству. Император сам выбирает Главного Судью и его помощников. Для более низших слоев власти существует другая система, также построенная на наследственности: можно получить один из трех титулов, который будет передаваться по наследству. Каждый титул будет давать право стать чиновником соответствующего разряда.</p>
+<p>Главы всех трех уровней выбираются сроком на десять лет (хотя часто снимаются ранее), за исключением военачальников, они служат до отставки свыше хоть всю жизнь. Далее идут обычные рабочие. Среди них нет ограничений по работе где либо. Это зависит лишь от личного желания, и, в некотором роде, от количества денег. Закона об обязательном образовании нет, поэтому каждый учится добровольно. Но стоит отметить, что академии есть далеко не везде. В государстве установлена одна единая религия, последователи прочих преследуются жандармерией. Церковь – единственная полу-автономная структура в Империи.</p>
+<h4>История Арваросской Империи</h4>
+<p>С самого зарождения мира в нем жили лишь “низшие” эльфы. Из-за своей культуры и уровня развития им было далеко до полноценных государств. Но все изменилось с приходом колонистов из других миров: людей и “высших” эльфов. Колонисты медленно рассеялись по самому большому материку мира — Арваросу. Некоторые в поисках лучшей жизни отправились на соседний материк — Ашоуру. Переломный момент наступил на пятисотом году, когда правитель одного...</p>
+<h3>Паспорта (и другие способы удостоверения личности)</h3>
+<h4>Арваросская Империя</h4>
+<p>Единый документ удостоверения личности появился в Арваросе не так давно, примерно за восемь лет до провозглашения Марккского государства. Для обычных граждан представляет собой толстую деревянную табличку, примерно пятнадцать на десять сантиметров. С одной стороны высечен герб Империи и надпись “Подданный Великой Арваросской Империи”. С другой высечено имя, фамилия, отчество, место рождения, раса. Табличка пропитана магией, в ней сохранен “магический слепок” существа. Для чиновников: устройство то же самое, только чем выше ранг – тем толще табличка и тем больше узоров.</p>
+<h4>Империя Рутта</h4>
+<p>Южане пользуются более архаичными методами – татуировки. Туда занесено имя, фамилия и отчество (потом будет дополняться). У мужчин они нанесены на груди, а у женщин, соответственно, на спине.</p>
+<h4>Марккское государство</h4>
+<p>Система перекочевала с Арвароса, только вместо дерева используется особая, трудно рвущаяся бумага. Информация та же, технология та же.</p>
+<h3>Летоисчисление</h3>
+<p>Первые колонисты использовали самые простые способы: считали время от рассвета до заката и делали зарубки на камнях и деревьях. Таким образом, существа посчитали количество дней в году. Оно было не точным, но уже хоть что-то.</p>
+<h4>Арваросская Империя</h4>
+<p>В Империи начали использовать первый полноценный календарь с разграничением месяцев и утверждением одного выходного. Из-за ошибок в подсчетах он не всегда сходился с привычным делением на зиму, лето, осень и весну. В одной неделе шесть дней, в месяце шесть недель, в году двенадцать месяцев. Названия пошли от тех первых колонистов. Первый день — Циосеб, второй — Вхувхилл, третий — Срьда, четвертый — Куарто, пятый — Алыкта, шестой (выходной) — Волно. Активно использовались "солнечные" и песочные часы. Примерно пятьдесят лет назад появились и заводные, которые позволяли отсчитывать двадцать четыре часа. Отсчет дней все еще ведется людьми и эльфами в специальных бюро.</p>
+<h4>Южная Империя</h4>
+<p>Отсчет ведется по более простой системе. У них четыреста десять дней, выходной — каждый день, оканчивающийся на ноль или пять. Это связано с погодой и климатом, у них нет зимы и лета, лишь чуть холоднее или чуть теплее. Однако, механические часы у них появились гораздо раньше.</p>
+<h3>Обучение (ВАИ)</h3>
+<p>Система образования Арваросской Империи: на государственном уровне образование доступно для людей и эльфов, мужчин и женщин, вне зависимости от происхождения. Государство старается ограничить поступление большими ценами на начальное обучение и нераспространенностью начальных школ в селах и деревнях. Существуют две ступени обучения: начальная и профессиональная, а также одна специальная.</p>
+<h4>Начальное образование (школы)</h4>
+<p>Цикл обучения длится пять лет. Плата за все пять лет вносится единовременно. Начальные школы есть во всех крупных городах. В начальную школу можно поступить начиная с десяти лет. В школах учатся десять месяцев в году. Государством не регулируется начало и конец учебного года во всех школах. Основные предметы: чтение, письмо, математика, история (правильная), основы религии. После окончания выдается грамота.</p>
+<h4>Профессиональное образование (академии)</h4>
+<p>Время обучения от трех до семи лет. Поступить можно сдачей экзаменов либо предъявлением грамоты об окончании школы. Каждый год студенты сдают экзамены. Каждая академия проводит обязательную «практику» (бесплатный труд учеников).</p>
+<h4>Военные школы</h4>
+<p>Обучение бесплатное, зачисление по тестам на выносливость. Длится один-три года. После окончания солдат зачисляется в обязательный резерв.</p>
+<h3>Народное собрание. Однопалатный парламент Марккского Государства</h3>
+<p>В совете представлены три блока: Военный (стражники и военные), Народный (кузнецы, фермеры, торговцы), Расовый (эльфы и люди, а в дальнейшем Люминары, литоиды и особая группа по делам низших эльфов). И отдельно канцелярия. Каждую группу представляет по одному существу от каждого города.</p>
+<p>Совет выполняет множество функций: формирование отчетности о жизни граждан (в каком городе сколько пожали пшеницы, какие куда нужны инструменты, как обстоят дела рас и так далее); голосования за новые законы.</p>
+<h2>Персонажи</h2>
+<h3>Муся</h3>
+<p>Эльфийка, которая работает в таверне "Пьяная Вишня", на кассе и официанткой. Оптимистичная и слегка наивная, она всегда рада новым знакомствам. Муся считает, что в каждом есть потенциал на добро, и всегда старается направить своих друзей на добрые поступки, хоть и чуть морально серыми способами. По правде Муся видит и плохие поступки человека, но всегда оправдывает их, мол "это он не специально, и вообще жизнь у него была тяжелая".</p>
+<p>Муся уверила себя, что у каждого есть какие-то обстоятельства, которые оправдывают их плохое поведение. Муся не помнит своих родителей, и знает только то, что они умерли. Вот что Муся не знает, так это что ее родители были убиты на войне, и сестры были отданы в приют, а оттуда в приемную семью. К несчастью семья эта состояла из психически нездоровой парочки людей. И они быстро начали подвергать сестер психологическому и физическому насилию.</p>
+<p>Тия как могла защищала Мусю, и поэтому Муся смогла бессознательно заблокировать эти воспоминания. Пока они вместе жили в лесу, Тия вообще не хотела ходить в город из-за ненависти к людям, и пыталась ограничить Мусю. Но Муся все равно умудрялась выскользнуть из дома и пойти играть с ребятишками из города. Но в какой-то момент Муся столкнулась с более неприятной компанией, и ее избили. Вернувшись домой Муся не смогла спрятать синяки и ссадины, и ей пришлось признаться Тие в случившемся.</p>
+<p>Это все переросло в большую ссору, и Муся, собрав вещи, переехала в городской трактир, где позже получила работу. Через пару месяцев обе сестры немного остыли, и отношения у них со временем наладились. Хоть Муся и не вернулась в лес.</p>
+<p>Отношения: ГГ – друг, Тия – старшая сестра, Джорджи – лучшая подруга, Тётушка Мей – начальница, Лира – лучшая подруга, Рози – знакомая/враг. Возможные конфликты: Муся узнает, что её сестра убивала и ранила людей все это время; ГГ не нравится, что Муся пытается быть его моральным компасом.</p>
+<h3>Тия</h3>
+<p>Эльфийка, живущая вне города в лесной хижине. Всегда улыбается и очень гостеприимна, даже слишком. Тия живет сама по себе, и в город ходит только за приправами, некоторыми инструментами и мылом. Ну и, конечно, навестить свою дорогую сестренку. Когда сестер отдали в приемную семью, Тия взяла на себя большую часть насилия, из-за чего развила ненависть к людям. В какой-то момент Тия не выдержала, и, убив приемных родителей, сбежала с сестрой.</p>
+<p>Они какое-то время бродили с места на место, пока не нашли заброшенную хижину в лесу недалеко от города. Там они жили вместе, пока Муся не переехала в трактир. А Тия только получила подтверждение того, что люди неисправимы и решила с проблемой разобраться напрямую. Когда Тия встречает людей в лесу, всегда приглашает их к себе, и часто настаивает. Как можно отказать такой дружелюбной и красивой девушке. Заманив человека в дом она от него избавляется, а вещи оставляет себе. А труп она оставляет на краю леса.</p>
+<p>Из-за этого она одна из самых разыскиваемых личностей в городе. Конечно, Муся и не подозревает, что ее сестра убивает людей в свободное время, и полностью уверена, что ее сестра – самая хорошая на свете. И так как Тия хочет защитить Мусю любой ценой, она даже готова хранить секреты, ради улыбки своей сестренки.</p>
+<p>Отношения: Муся – младшая сестра, Рози – враг/подруга. Возможные конфликты: большая ссора с Мусей; пытается убить ГГ; ее арестовывают; суд, признание виновной, приговор к казни.</p>
+<h3>Рози</h3>
+<p>Приёмная дочь Реймонда. Состоит в городской страже. Рози самоуверенная и имеет сильное чувство правосудия. Временами бывает чуть занудной. Рози видит мир только черным и белым. И считает что человек может быть только плохим или только хорошим. Имеет также очень сильную веру в городской суд, и уверена, что суд всегда прав. Она хладнокровно устраняет "виновных" своим мечом и является следующим кандидатом на роль капитана стражи.</p>
+<p>Она была оставлена в детском приюте с младенчества, и видела все грязное подбрюшье города в котором жила. Быть стражником было ее мечтой с самого детства. Ее прозвали Рози из-за того, что она любит ухаживать за своим садом, который, по большей части, состоит из роз.</p>
+<p>Отношения: Реймонд – приемный отец, ГГ – любовный интерес, Тия – подруга, Лира – подруга.</p>
+<h3>Реймонд</h3>
+<p>Капитан городской стражи и приемный отец Хелен. Выходец из семьи кузнецов, с помощью рекомендаций попал в престижную рыцарскую академию, где познакомился со своей будущей женой Джули, Биллом и Офелией. Выпустившись, несколько лет работал рыцарем, заработал титул. Потеряв жену и сына в первом набеге южан, удочерил Хелен. Реймонд боролся с коррупцией, но ему пригрозили, и он вынужден был молчать. После гибели Хелен совершил суицид.</p>
+<h3>Нагда "Игрок"</h3>
+<p>Магическая кукла, созданная Рудиусом как для компании, так и для игры в карты. Нагда – хитрый и сомнительный, но очень верный своему хозяину, иногда даже до фанатического уровня. По какой-то причине Рудиус, после завершения Нагды, так с ним не разу и не сыграв, оставил его на пороге своей башни. Там Нагду и нашел Корус. После игры Корус решил забрать Нагду к себе. Когда ГГ бьется с Корусом, Нагда умирает, из него выпадают куски дерева и магическое ядро. В здании игрального дома можно найти дневник Нагды.</p>
+<p>Отношения: Рудиус – создатель, Корус – хозяин/отец/наставник, ГГ – друг/коллега/враг.</p>
+<h3>Лира Велкесс</h3>
+<p>Старшая дочь высокопоставленного стратега Арвароса. Выучившись в рыцарской академии, семья отослала её на дальний край империи. С Рози знакома с детства. После смерти Рози, Лира познакомилась с Мусей. Отношения: Рози – кумир/подруга, Тия – соперник/враг, ГГ – знакомый/друг, Муся – лучшая подруга.</p>
+<h3>Виллис "Билл" Далл</h3>
+<p>Травник и зельевар, заведует своей лавкой. Учился в рыцарской академии, недоучился. Его жена Офелия построила ему лавку. Сыновья работают в лавке. Отношения: Риель – племянник/приемный сын, Офелия – жена, Балт и Пьер – сыновья, Реймонд – лучший друг.</p>
+<h3>Риель Тулис Далл</h3>
+<p>Помощник в лавке Билла. Холодный, отстраненный, но ласковый и добрый. Родом из семьи военной аристократии. В 14 лет отправился к люминарам, нарвал невиданных трав, одна из которых изменила его внешность (белые волосы и кожа, красные глаза) и лишила "боевого возбуждения". Из-за проклятия его убрали из наследников. Родители погибли во время набега южан. Живет у дяди. Отношения: Билл – дядя/приемный отец, Лира – лучшая подруга, ГГ – друг.</p>
+<h3>Морган Мей</h3>
+<p>Владелица трактира "Пьяная Вишня". Крепкая женщина со стальным характером и золотым сердцем. С тех пор, как ее муж бросил Морган и их дочь, она сама заправляет трактиром. Приютила ГГ. Отношения: Джорджина – дочь, Муся – любимая работница, ГГ – жилец/знакомый.</p>
+<h3>Джорджина "Джорджи" Мей</h3>
+<p>Дочь владелицы трактира. Лучшая подруга Муси. Работает на кухне, официанткой и на кассе. Догадливая, любит сплетничать. Защищает друзей. Отношения: "Тётушка" Мей – мать, Муся – лучшая подруга, ГГ – знакомый, Лира – возможный соперник.</p>
+<h2>Пажить</h2>
+<p>Пажить — сельскохозяйственный центр МГ. Расположен на берегу реки. Население: ±300 существ. Формально делится на три части: внутренняя (дома за стеной), некоторые строения за стеной в хаотичном порядке, небольшая деревня скотоводов рядом с пастбищами. В городе присутствуют: три таверны, тюрьма, свечная мастерская, винокурня, пивоварня, небольшой порт для лодок, лазарет с аптекой, канцелярия, игорный дом, ратуша, две пекарни, кузня, церковь.</p>
+<h2>Марккское Государство</h2>
+<p>Сепаратистское государство в южной части материка Арварос. История, парламент, города и сёла.</p>
+<h3>Канцелярия</h3>
+<p>Государственная структура Северной Империи и Марккского Государства. В основном в канцелярии работают люди (около 70%), эльфы 20%, низшие эльфы 8%, редкие люминары 2%. Задачи: перепись населения, контроль миграции, выдача лицензий, создание паспортов (часто низшие эльфы), регистрация территорий, работа счетоводами. Здание канцелярии – неотъемлемая часть каждого города.</p>
+<h3>История Марккского Государства</h3>
+<p>Первым городом, заложенным в этом регионе, стал Ферград (1307). Позднее, в 1310 и 1317 были заложены Монкруш и Пажить. 1389 заложен Акрополь. В 1401 году Империю раздирали восстания, разбои, пиратство. Сообщение нарушилось. В 1519 году сообщение пропало полностью. Один из представителей знатного военного рода провозгласил себя абсолютным правителем, но терроризировал жителей. 1538 год – война с Империей Рутта. Войско Рутты напало, "вождь" пытался бежать, казнен. Представители военной аристократии собрали войско и отбили атаки. Жители региона отказались от старых методов управления и провозгласили независимое государство. 30.03.1574.</p>
+<h3>Морфия</h3>
+<p>Транквилиум — свод законов и правил религии, написанный людьми. Морфия — название религии. “Смерть — это неотъемлемая часть порядка и гармонии. Она неизбежна, и создана для поддержания ваших рассудков...” Слова Азриеля. Но люди испугались и придумали: “Смерть — это наказание за грехи. Вечная бездна тьмы и мучений, куда попадают только грязные души”. На момент сюжета Морфилизм – популярная, но пугающая религия.</p>
+<h3>Экономика</h3>
+<p>Имперская Монета (Минта). Выпускается двумя номиналами: в одну и тысячу. Круглая, объемная монета. С одной стороны герб Империи, с другой – номинал и номер. На ребро нанесен неповторимый узор.</p>
+<h3>Народное Собрание (Парламент Марккского Государства)</h3>
+<p>Однопалатный парламент. От каждого населенного пункта представлено по одному представителю от каждой профессии. Функции: формирование отчетности о жизни граждан, голосования за новые законы. Состав от городов: Пажить (стража, ремесленники, фермеры, торговцы, канцеляры), Ферград (кузнецы, шахтеры, торговцы, канцеляры, стража), МонкрушЪ (стража, ремесленники, учителя, фермера, торговцы, банкиры, канцеляры), Кадар (ремесленники, военные, стража, кузницы), Дэбренко (учителя, учёные, стража), Лэсса (охотники, рыболовы), Гарес (лесорубы), Барбас (каменоломы), Рузан (лесорубы и рыболовы), Арода (фермеры).</p>
+<div class="wiki-stats"><span>📄 Объём текста в символах (с пробелами): 15 478</span><span>© ReggiRi</span></div></div></template>
+<template id="license-template"><div class="license"><h3>Лицензия</h3><p>©ReggiRi 2025–2026. Все материалы портфолио и тексты принадлежат автору, если для конкретного материала не указано иное.</p><p>Без отдельного письменного разрешения автора запрещены коммерческое использование, перепубликация полного текста, выдача материалов за собственную работу и создание производных материалов на их основе.</p><p>Короткие цитаты и ссылки на портфолио допустимы с указанием ReggiRi и исходного адреса.</p></div></template>
+<script>
+const projects={"skyloom": {"id": "skyloom", "title": "Ремейк сюжетного сезона «Новое Поколение»", "eyebrow": "SKYLOOM / TEAM PROJECT", "kind": "video", "art": "art-skyloom", "year": "командная работа", "desc": "Ремейк сюжетного сезона «Новое Поколение» в команде SkyLoom.", "tags": ["сюжет", "команда", "Minecraft"], "quote": "Командный проект: отдельный кейс работы над ремейком сюжетного сезона.", "facts": ["Проект заявлен как ремейк сюжетного сезона «Новое Поколение».", "Работа выполнялась в составе команды SkyLoom.", "В карточке доступны видео проекта и страница команды."], "links": [["Ролик проекта", "https://youtu.be/btF6BQUaR-s?si=KUDRp-UWmrchAHeJ"], ["Команда SkyLoom", "https://t.me/megaskyloom"]]}, "kuraga": {"id": "kuraga", "title": "Kuraga", "eyebrow": "WORLDBUILDING", "kind": "world", "art": "art-kuraga", "year": "открытая world bible", "desc": "Самостоятельный кейс миростроения: проработанный мир, вынесенный в отдельную открытую вики Kuraga Pedia.", "tags": ["worldbuilding", "world bible", "вики"], "quote": "Открытая энциклопедия мира как самостоятельный результат работы.", "facts": ["Космология, мана, души и типы существ.", "Расы, государства, документы, календарь, образование и парламент.", "Персонажи, Пажить, Марккское Государство, Морфия и экономика."], "links": [["Оригинальная Kuraga Pedia", "https://reggiri.github.io/kuraga-pedia/"]]}, "fresh": {"id": "fresh", "title": "Fresh Meat", "eyebrow": "QUEST EDITING", "kind": "game", "art": "art-fresh", "year": "студийная работа", "desc": "Работа на студию Fresh Meat в качестве сценариста: редактирование более трёхсот квестов сборки Kingdom of Might and Magic.", "tags": ["FTB Quests", "редактирование", "студия"], "quote": "Более 300 отредактированных квестов — отдельный production-кейс.", "facts": ["Работа выполнялась для студии Fresh Meat.", "Объём задачи — более трёхсот квестов.", "Формат связан с FTB Quests и редактурой игрового контента."], "links": [["Fresh Meat", "https://t.me/fshmeat"]]}, "reynard": {"id": "reynard", "title": "Рэйнард", "eyebrow": "YOUTUBE / SCRIPTING", "kind": "video", "art": "art-video", "year": "сценарии + аналитика", "desc": "Кейс сценарной работы для канала «Я — Рэйнард». Внутри — «Повторяшки» как аналитический текст о тропах и «Эден» как отдельный сценарный материал.", "tags": ["YouTube", "сценарии", "аналитика"], "quote": "«Хотелось бы увидеть оригинальность не только в сеттинге, но и в конкретных сюжетных ходах.»", "facts": ["«Повторяшки» разбирает повторяющиеся дизайны, архетипы и сюжетные тропы.", "«Эден» — отдельный сценарный материал для видеоформата.", "Оба документа показывают работу с уже существующим большим миром и его аудиторией."], "files": ["ПовторяшкиСценарий.pdf", "ЭденСценарий.pdf"], "links": [["Канал «Я — Рэйнард»", "https://youtube.com/@reynardik?si=laCVzmcY8_Uokbsl"]]}, "intro": {"id": "intro", "title": "Вступительное No Echo", "eyebrow": "GAME INTRO", "kind": "game", "art": "art-intro", "year": "«Дорога» + первая глава", "desc": "Объединённая карточка двух вступительных материалов: сценария «Дорога» для NoEcho и тестового плана первой главы.", "tags": ["катсцены", "структура", "персонажи", "диалоги"], "quote": "Два материала одного входа в историю: от постановки сцен и передачи управления до структуры первой главы.", "facts": ["«Дорога» размечает катсцены, передачу управления, следование за NPC и технические моменты.", "Тестовое задаёт восемь событий первой главы и причинно-следственные переходы между ними.", "Оба материала работают с первым знакомством игрока с героями и аномалией мира."], "files": ["Вступительное NoEcho, «Дорога».md", "Тестовое_задание_на_сюжет_первой_главы.pdf"]}, "mlt": {"id": "mlt", "title": "Монумент ложного Творца", "eyebrow": "INTERACTIVE SERIES", "kind": "game", "art": "art-mlt", "year": "серия 1", "desc": "Интерактивный сценарий с исследованием, боем, предметами, диалогами, выбором маршрута и переходом в сон-сцену.", "tags": ["интерактив", "геймплей", "квесты"], "quote": "«Вам в голову приходит идея — А Вы не пытались выслать на переговоры своего человека без формы?»", "facts": ["Сцены описывают пространство, действие игрока и реплики.", "Есть исследовательские и боевые последовательности.", "Сценарий содержит production-детали: размеры помещений, объекты, частицы, головоломку и переходы."], "files": ["МлТСерияОдин.pdf"]}};
+const archive={"Сцена пробуждение redraw.pdf": {"title": "Пробуждение игрока", "short": "Стартовая сцена и ввод игрока в мир.", "desc": "Тёмный зал, коконы, запись Фериды, регистрационные данные, первый портал и столкновение с Великим архивариусом."}, "Акт Первый.pdf": {"title": "Акт первый", "short": "Хаб, комнаты, ресурсы и лут.", "desc": "Вестибюль как хаб, стартовая комната, первый ярус, рост количества мобов и наград, типы записок."}, "Лор Меровии Redraw.pdf": {"title": "Лор Меровии", "short": "История мира и устройство Архива.", "desc": "Происхождение Архива, Меровия, Совет, Братия, война, очистка, выжившие, 500 лет спустя и Великий архивариус."}, "Записки(сто штук).pdf": {"title": "Записки — 100 штук", "short": "Внутримировая история от первого лица.", "desc": "От первого камня до трёх фракций и ожидания Архива. Материал одновременно раскрывает историю и создаёт эмоциональный фон мира."}, "Цитаты и Парадоксы.pdf": {"title": "Цитаты и Парадоксы", "short": "Предметы, эффекты и текстовые механики.", "desc": "Цитаты дают положительные эффекты, парадоксы — отрицательные; тексты встроены в систему предметов и лора."}, "Акт 2 v1.1.pdf": {"title": "Акт 2 — Фракции", "short": "Фракции, печати и боссы.", "desc": "Три фракции, общий ресурс записок, три печати, Склеп, Эхо и Шёпот, босс-механики и реакции лидеров."}};
+const modal=document.getElementById('modal'), content=document.getElementById('modalContent');
+function esc(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function openModal(title,eyebrow,meta,tabs){document.getElementById('modalTitle').textContent=title;document.getElementById('modalEyebrow').textContent=eyebrow;document.getElementById('modalMeta').innerHTML=meta;document.getElementById('modalTabs').innerHTML=tabs.map((t,i)=>`<button class="modal-tab ${i?'':'active'}" data-tab="${t.id}">${t.label}</button>`).join('');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.querySelectorAll('.modal-tab').forEach(b=>b.onclick=()=>{tabs.find(t=>t.id===b.dataset.tab).render();document.querySelectorAll('.modal-tab').forEach(x=>x.classList.remove('active'));b.classList.add('active')});tabs[0].render()}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function template(id){const t=document.getElementById(id);return t?t.content.cloneNode(true):document.createDocumentFragment()}
+function htmlOfTemplate(id){const t=document.getElementById(id);if(!t)return '';const d=t.content.cloneNode(true);const wrap=document.createElement('div');wrap.appendChild(d);return wrap.innerHTML}
+function projectView(p){const meta=`<span>${esc(p.eyebrow)}</span><span>${esc(p.year)}</span>${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}`;let tabs=[{id:'overview',label:'Обзор',render:()=>content.innerHTML=`<div class="detail-grid"><div><h3>Что это</h3><p>${esc(p.desc)}</p><h3>Что показывает кейс</h3><ul>${p.facts.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${p.links?.length?`<h3>Ссылки</h3><div class="links">${p.links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${esc(l[0])} ↗</a>`).join('')}</div>`:''}</div><div class="quote">${esc(p.quote||'')}</div></div>`}];
+if(p.id==='kuraga') tabs.push({id:'wiki',label:'Вся Kuraga Pedia',render:()=>content.innerHTML=htmlOfTemplate('doc-kuraga')});
+if(p.files) p.files.forEach((f,i)=>tabs.push({id:'file'+i,label:'Материал '+(i+1),render:()=>content.innerHTML=htmlOfTemplate(f==='Вступительное NoEcho, «Дорога».md'?'doc-road':'doc-'+f)}));
+openModal(p.title,p.eyebrow,meta,tabs)}
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>projectView(projects[b.dataset.open]));
+document.querySelectorAll('.archive-item').forEach(b=>b.onclick=()=>{const fn=b.dataset.doc;const d=archive[fn];openModal(d.title,'АРХИВ / ДОКУМЕНТ',`<span>${esc(fn)}</span>`,[{id:'text',label:'Документ',render:()=>content.innerHTML=`<div class="detail-grid"><div><p>${esc(d.desc)}</p></div></div>${htmlOfTemplate('doc-'+fn)}`} ,{id:'about',label:'Кратко',render:()=>content.innerHTML=`<div class="quote">${esc(d.desc)}</div>`}])});
+const filters=[...document.querySelectorAll('.filter')], cards=[...document.querySelectorAll('.project-card')], search=document.getElementById('search');
+function filter(){const q=search.value.toLowerCase().trim(), active=document.querySelector('.filter.active').dataset.filter;let n=0;cards.forEach(c=>{const ok=(active==='all'||c.dataset.kind===active)&&(!q||c.dataset.search.toLowerCase().includes(q));c.hidden=!ok;if(ok)n++});document.getElementById('empty').hidden=n>0}
+filters.forEach(b=>b.onclick=()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');filter()});search.oninput=filter;
+document.querySelectorAll('[data-close]').forEach(x=>x.onclick=closeModal);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('licenseBtn').onclick=()=>openModal('Лицензия','LEGAL', '',[{id:'license',label:'Условия',render:()=>content.innerHTML=htmlOfTemplate('license-template')}]);
+</script>
+</body></html>
